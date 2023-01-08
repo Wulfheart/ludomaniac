@@ -12,7 +12,8 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->foreignId("variant_id")->constrained();
-            $table->longText("description");
+            $table->longText("description")->nullable();
+            $table->timestamps();
         });
     }
 

@@ -13,6 +13,7 @@ return new class extends Migration
             $table->foreignId("game_id")->constrained();
             $table->foreignId("power_id")->constrained();
             $table->foreignId("user_id")->constrained();
+            $table->timestamps();
         });
     }
 

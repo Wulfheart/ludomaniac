@@ -3,22 +3,25 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Domain\Users\Enums\RankEnum;
+use Domain\Users\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            VariantSeeder::class,
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::create([
+            'name' => 'Test',
+            'email' => 'test@test.de',
+            'password' => bcrypt('123'),
+            'rank' => RankEnum::A,
+            'is_admin' => true,
+            'is_game_master' => true,
+        ]);
     }
 }
