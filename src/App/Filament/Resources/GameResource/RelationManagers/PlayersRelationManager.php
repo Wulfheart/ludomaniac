@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\GameResource\RelationManagers;
 
+use Domain\Core\Actions\AssignUserToGameAction;
 use Domain\Core\Actions\BanUserFromGameAction;
 use Domain\Core\Models\Game;
 use Domain\Core\Models\Player;
@@ -24,7 +25,7 @@ class PlayersRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                
+
             ]);
     }
 
@@ -53,10 +54,19 @@ class PlayersRelationManager extends RelationManager
                 Tables\Actions\Action::make('Assign user')
                     ->form([
                         Forms\Components\Select::make('user_id')
-                            ->options(fn(Player $player) => dd($player))
+                            ->options(function(RelationManager $livewire) {
+                                /** @var Game $game */
+                                $game = $livewire->getOwnerRecord();
+                                return User::query()->whereNotPlayingInGame($game->id)->pluck('name', 'id');
+                            })
                             ->required(),
                     ])
-                    ->action(fn() => dd("HERE"))
+                    ->action(function (array $data, Player $player) {
+                        dd($data, $player);
+                        /** @var AssignUserToGameAction $action */
+                        $action = app(AssignUserToGameAction::class);
+                        $action->execute($player, User::find($data['user_id']));
+                    })
                     ->visible(fn(Player $player) => $player->canAcceptPlayer())
 
                 ,
