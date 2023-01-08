@@ -3,9 +3,12 @@
 namespace Domain\Users\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Domain\Core\Models\Player;
+use Domain\Users\Builders\UserBuilder;
 use Domain\Users\Enums\RankEnum;
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -48,8 +51,18 @@ class User extends Authenticatable implements FilamentUser
         'rank' => RankEnum::class,
     ];
 
+    public function newEloquentBuilder($query): UserBuilder
+    {
+        return new UserBuilder($query);
+    }
+
     public function canAccessFilament(): bool
     {
         return $this->is_admin || $this->is_game_master;
+    }
+
+    public function playsIn(): HasMany
+    {
+        return $this->hasMany(Player::class);
     }
 }

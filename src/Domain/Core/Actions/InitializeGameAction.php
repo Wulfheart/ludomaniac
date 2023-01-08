@@ -13,7 +13,6 @@ class InitializeGameAction
 {
     public function execute(Game $game): void
     {
-        dd($game->load('variant.powers')->variant);
         $game->load('variant.powers')->variant->powers->each(
             fn(Power $power) => Player::create([
                 'game_id' => $game->id,

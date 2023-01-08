@@ -23,5 +23,7 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
             'is_game_master' => true,
         ]);
+
+        User::factory(10)->create();
     }
 }

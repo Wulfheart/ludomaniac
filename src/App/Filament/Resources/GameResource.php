@@ -40,8 +40,6 @@ class GameResource extends Resource
                         'codeBlock',
                     ])
                     ->columnSpanFull(),
-
-
             ]);
     }
 

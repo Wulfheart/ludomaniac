@@ -2,6 +2,10 @@
 
 namespace App\Filament\Resources\GameResource\RelationManagers;
 
+use Domain\Core\Actions\BanUserFromGameAction;
+use Domain\Core\Models\Game;
+use Domain\Core\Models\Player;
+use Domain\Users\Models\User;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
@@ -20,9 +24,7 @@ class PlayersRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('player_id')
-                    ->required()
-                    ->maxLength(255),
+                
             ]);
     }
 
@@ -30,20 +32,37 @@ class PlayersRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('player_id'),
+                Tables\Columns\TextColumn::make('power.name'),
+                Tables\Columns\TextColumn::make('user.name')->default("Kein Nutzer zugewiesen"),
             ])
             ->filters([
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\Action::make('ban')
+                    ->action(function (Player $player) {
+                        /** @var BanUserFromGameAction $action */
+                        $action = app(BanUserFromGameAction::class);
+                        $action->execute($player);
+                    })
+                    ->visible(fn(Player $player) => $player->canBeBanned())
+                    ->requiresConfirmation(),
+                Tables\Actions\Action::make('Assign user')
+                    ->form([
+                        Forms\Components\Select::make('user_id')
+                            ->options(fn(Player $player) => dd($player))
+                            ->required(),
+                    ])
+                    ->action(fn() => dd("HERE"))
+                    ->visible(fn(Player $player) => $player->canAcceptPlayer())
+
+                ,
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                //Tables\Actions\DeleteBulkAction::make(),
             ]);
-    }    
+    }
 }

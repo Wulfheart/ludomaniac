@@ -29,4 +29,14 @@ class Player extends Model
     {
         return $this->belongsTo(Power::class);
     }
+
+    public function canBeBanned(): bool
+    {
+        return $this->user_id !== null;
+    }
+
+    public function canAcceptPlayer(): bool
+    {
+        return $this->user_id === null;
+    }
 }

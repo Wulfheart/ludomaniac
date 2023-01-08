@@ -10,8 +10,15 @@ class VariantSeeder extends Seeder
 {
     public function run(): void
     {
-        Variant::create([
+        $classic = Variant::create([
             'name' => 'Klassisch',
         ]);
+
+        $names = ["Deutschland", "England", "Frankreich", "Österreich-Ungarn", "Italien", "Russland", "Osmanisches Reich"];
+        foreach ($names as $name) {
+            $classic->powers()->create([
+                'name' => $name,
+            ]);
+        }
     }
 }
