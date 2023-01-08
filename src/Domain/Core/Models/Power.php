@@ -4,6 +4,7 @@ namespace Domain\Core\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Power extends Model
 {
@@ -12,4 +13,9 @@ class Power extends Model
     protected $guarded = [
         'id',
     ];
+
+    public function variant(): BelongsTo
+    {
+        return $this->belongsTo(Variant::class);
+    }
 }

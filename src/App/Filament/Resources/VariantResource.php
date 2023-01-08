@@ -2,25 +2,24 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\GameResource\Pages;
-use App\Filament\Resources\GameResource\RelationManagers\PlayersRelationManager;
-use Domain\Core\Models\Game;
+use App\Filament\Resources\VariantResource\Pages;
+use Domain\Core\Models\Variant;
 use Filament\Forms;
-use Filament\Forms\Components\Repeater;
-use Filament\Pages\Page;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Resources\Form;
-use Filament\Resources\Pages\CreateRecord;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class GameResource extends Resource
+class VariantResource extends Resource
 {
-    protected static ?string $model = Game::class;
+    protected static ?string $model = Variant::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
-    protected static ?string $navigationGroup = 'Spielleiter';
+    protected static ?string $navigationGroup = 'Admin';
 
     public static function form(Form $form): Form
     {
@@ -29,19 +28,12 @@ class GameResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->unique(ignoreRecord: true),
-                Forms\Components\Select::make('variant_id')
-                    ->relationship('variant', 'name')
-                    ->required()
-                    ->disabledOn('edit')
-                    ->dehydrated(fn(Page $livewire) => $livewire instanceof CreateRecord),
-                Forms\Components\MarkdownEditor::make('description')
+                MarkdownEditor::make('description')
                     ->disableToolbarButtons([
                         'attachFiles',
                         'codeBlock',
                     ])
                     ->columnSpanFull(),
-
-
             ]);
     }
 
@@ -52,7 +44,6 @@ class GameResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('variant.name'),
             ])
             ->filters([
                 //
@@ -68,16 +59,16 @@ class GameResource extends Resource
     public static function getRelations(): array
     {
         return [
-            PlayersRelationManager::class,
+            //
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGames::route('/'),
-            'create' => Pages\CreateGame::route('/create'),
-            'edit' => Pages\EditGame::route('/{record}/edit'),
+            'index' => Pages\ListVariants::route('/'),
+            'create' => Pages\CreateVariant::route('/create'),
+            'edit' => Pages\EditVariant::route('/{record}/edit'),
         ];
     }
 }
