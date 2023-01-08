@@ -44,23 +44,27 @@ class PlayersRelationManager extends RelationManager
             ])
             ->actions([
                 Tables\Actions\Action::make('ban')
-                    ->action(function (Player $player) {
+                    ->action(function (RelationManager $livewire) {
+                        dd($livewire->getOwnerRecord());
                         /** @var BanUserFromGameAction $action */
                         $action = app(BanUserFromGameAction::class);
                         $action->execute($player);
                     })
-                    ->visible(fn(Player $player) => $player->canBeBanned())
+                    //->visible(fn(Player $player) => $player->canBeBanned())
                     ->requiresConfirmation(),
                 Tables\Actions\Action::make('Assign user')
-                    ->form([
-                        Forms\Components\Select::make('user_id')
-                            ->options(function(RelationManager $livewire) {
-                                /** @var Game $game */
-                                $game = $livewire->getOwnerRecord();
-                                return User::query()->whereNotPlayingInGame($game->id)->pluck('name', 'id');
-                            })
-                            ->required(),
-                    ])
+                    ->form(function (RelationManager $livewire) {
+                        /** @var Game $game */
+                        $game = $livewire->getOwnerRecord();
+                        return [
+                            Forms\Components\Select::make('user_id')
+                                ->options(function () use ($game){
+                                    return User::query()->whereNotPlayingInGame($game->id)->pluck('name', 'id');
+                                })
+                                ->required(),
+                            Forms\Components\Hidden::make('player_id'),
+                        ];
+                    })
                     ->action(function (array $data, Player $player) {
                         dd($data, $player);
                         /** @var AssignUserToGameAction $action */
@@ -72,7 +76,7 @@ class PlayersRelationManager extends RelationManager
                 ,
             ])
             ->bulkActions([
-                //Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 }
