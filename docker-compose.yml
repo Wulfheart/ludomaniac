@@ -1,0 +1,29 @@
+version: '3.1'
+
+services:
+
+    db:
+        image: mariadb
+        environment:
+            MARIADB_ROOT_PASSWORD: root
+            MARIADB_USER: laravel
+            MARIADB_PASSWORD: password
+            MARIADB_DATABASE: ludo
+        ports:
+            - "3407:3306"
+    db_test:
+        image: mariadb
+        environment:
+            MARIADB_ROOT_PASSWORD: root
+            MARIADB_USER: laravel
+            MARIADB_PASSWORD: password
+            MARIADB_DATABASE: ludo
+        ports:
+            - "3408:3306"
+    mailhog:
+        image: mailhog/mailhog
+        logging:
+            driver: 'none'  # disable saving logs
+        ports:
+            - "1026:1025" # smtp server
+            - "8026:8025" # web ui
