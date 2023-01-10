@@ -20,6 +20,7 @@ class MarkGameAsStartedOnFullAssignmentListener
         }
 
         $game->started_at = now();
+        $game->save();
         GameStartedEvent::dispatch($game->id);
     }
 }
