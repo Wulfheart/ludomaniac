@@ -2,15 +2,14 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Domain\Core\Models\Game;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends Factory<Game>
  */
 class GameFactory extends Factory
 {
-
     protected $model = Game::class;
 
     public function definition()

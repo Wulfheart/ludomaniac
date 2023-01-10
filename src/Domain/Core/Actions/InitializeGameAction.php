@@ -14,7 +14,7 @@ class InitializeGameAction
     public function execute(Game $game): void
     {
         $game->load('variant.powers')->variant->powers->each(
-            fn(Power $power) => Player::create([
+            fn (Power $power) => Player::create([
                 'game_id' => $game->id,
                 'power_id' => $power->id,
                 'user_id' => null,

@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Domain\Core\Models\Variant;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class VariantSeeder extends Seeder
@@ -14,7 +13,7 @@ class VariantSeeder extends Seeder
             'name' => 'Klassisch',
         ]);
 
-        $names = ["Deutschland", "England", "Frankreich", "Österreich-Ungarn", "Italien", "Russland", "Osmanisches Reich"];
+        $names = ['Deutschland', 'England', 'Frankreich', 'Österreich-Ungarn', 'Italien', 'Russland', 'Osmanisches Reich'];
         foreach ($names as $name) {
             $classic->powers()->create([
                 'name' => $name,

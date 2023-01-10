@@ -2,7 +2,6 @@
 
 namespace Domain\Core\Actions;
 
-use Domain\Core\Models\Game;
 use Domain\Core\Models\Player;
 use Domain\Users\Models\User;
 

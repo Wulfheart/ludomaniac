@@ -10,9 +10,9 @@ return new class extends Migration
     {
         Schema::create('powers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("variant_id")->constrained();
-            $table->string("name");
-            $table->longText("description")->nullable();
+            $table->foreignId('variant_id')->constrained();
+            $table->string('name');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

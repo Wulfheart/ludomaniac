@@ -9,8 +9,6 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class SignedUpUsersRelationManager extends RelationManager
 {
@@ -22,20 +20,21 @@ class SignedUpUsersRelationManager extends RelationManager
     {
         return $form
             ->schema(function (RelationManager $livewire) {
-                    /** @var Game $game */
-                    $game = $livewire->getOwnerRecord();
-                    return [
-                        Forms\Components\Select::make('user_id')
-                            ->options(function () use ($game){
-                                return User::query()
-                                    ->whereNotSignedUpForGame($game->id)
-                                    ->whereNotPlayingInGame($game->id)
-                                    ->pluck('name', 'id');
-                            })
-                            ->searchable()
-                            ->required(),
-                    ];
-                });
+                /** @var Game $game */
+                $game = $livewire->getOwnerRecord();
+
+                return [
+                    Forms\Components\Select::make('user_id')
+                        ->options(function () use ($game) {
+                            return User::query()
+                                ->whereNotSignedUpForGame($game->id)
+                                ->whereNotPlayingInGame($game->id)
+                                ->pluck('name', 'id');
+                        })
+                        ->searchable()
+                        ->required(),
+                ];
+            });
     }
 
     public static function table(Table $table): Table
@@ -51,7 +50,7 @@ class SignedUpUsersRelationManager extends RelationManager
                 Tables\Actions\CreateAction::make(),
             ])
             ->actions([
-                Tables\Actions\DeleteAction::make()->label("Remove"),
+                Tables\Actions\DeleteAction::make()->label('Remove'),
             ])
             ->bulkActions([
                 //Tables\Actions\DeleteBulkAction::make(),

@@ -5,7 +5,6 @@ namespace App\Filament\Resources\GameResource\Pages;
 use App\Filament\Resources\GameResource;
 use Domain\Core\Actions\InitializeGameAction;
 use Domain\Core\Models\Game;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,6 +20,7 @@ class CreateGame extends CreateRecord
         /** @var InitializeGameAction $action */
         $action = app(InitializeGameAction::class);
         $action->execute($game);
+
         return $game;
     }
 }

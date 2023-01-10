@@ -7,7 +7,6 @@ use App\Filament\Resources\GameResource\RelationManagers\PlayersRelationManager;
 use App\Filament\Resources\GameResource\RelationManagers\SignedUpUsersRelationManager;
 use Domain\Core\Models\Game;
 use Filament\Forms;
-use Filament\Forms\Components\Repeater;
 use Filament\Pages\Page;
 use Filament\Resources\Form;
 use Filament\Resources\Pages\CreateRecord;
@@ -34,7 +33,7 @@ class GameResource extends Resource
                     ->relationship('variant', 'name')
                     ->required()
                     ->disabledOn('edit')
-                    ->dehydrated(fn(Page $livewire) => $livewire instanceof CreateRecord),
+                    ->dehydrated(fn (Page $livewire) => $livewire instanceof CreateRecord),
                 Forms\Components\MarkdownEditor::make('description')
                     ->disableToolbarButtons([
                         'attachFiles',
@@ -68,7 +67,7 @@ class GameResource extends Resource
     {
         return [
             PlayersRelationManager::class,
-            SignedUpUsersRelationManager::class
+            SignedUpUsersRelationManager::class,
         ];
     }
 

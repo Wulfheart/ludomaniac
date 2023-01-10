@@ -10,9 +10,9 @@ return new class extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("game_id")->constrained();
-            $table->foreignId("power_id")->constrained();
-            $table->foreignId("user_id")->nullable()->constrained();
+            $table->foreignId('game_id')->constrained();
+            $table->foreignId('power_id')->constrained();
+            $table->foreignId('user_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

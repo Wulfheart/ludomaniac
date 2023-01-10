@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\GameResource\RelationManagers;
 
-use Closure;
 use Domain\Core\Actions\AssignUserToGameAction;
 use Domain\Core\Actions\BanUserFromGameAction;
 use Domain\Core\Models\Game;
@@ -14,9 +13,7 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PlayersRelationManager extends RelationManager
 {
@@ -37,7 +34,7 @@ class PlayersRelationManager extends RelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('power.name'),
-                Tables\Columns\TextColumn::make('user.name')->default("Kein Nutzer zugewiesen"),
+                Tables\Columns\TextColumn::make('user.name')->default('Kein Nutzer zugewiesen'),
             ])
             ->filters([
                 //
@@ -54,7 +51,7 @@ class PlayersRelationManager extends RelationManager
                         $action = app(BanUserFromGameAction::class);
                         $action->execute($player);
                     })
-                    ->visible(fn(Model $record) => $record->canBeBanned())
+                    ->visible(fn (Model $record) => $record->canBeBanned())
                     ->requiresConfirmation(),
                 Tables\Actions\Action::make('Assign user')
                     ->form(function (RelationManager $livewire) {
@@ -64,8 +61,8 @@ class PlayersRelationManager extends RelationManager
                         return [
                             Forms\Components\Select::make('user_id')
                                 ->options(fn (callable $get) => User::query()
-                                    ->when(!$get('show_all_users'),
-                                        fn(UserBuilder $query) => $query->whereSignedUpForGame($game->id)
+                                    ->when(! $get('show_all_users'),
+                                        fn (UserBuilder $query) => $query->whereSignedUpForGame($game->id)
                                     )
                                     ->whereNotPlayingInGame($game->id)
                                     ->pluck('name', 'id')
@@ -73,7 +70,7 @@ class PlayersRelationManager extends RelationManager
                                 ->required()
                                 ->searchable(),
                             Forms\Components\Toggle::make('show_all_users')
-                                ->hint("Show all users, even if they have not signed up for this game")
+                                ->hint('Show all users, even if they have not signed up for this game')
                                 ->offIcon('heroicon-s-eye-off')
                                 ->onIcon('heroicon-s-eye')
                                 ->reactive(),
@@ -84,9 +81,7 @@ class PlayersRelationManager extends RelationManager
                         $action = app(AssignUserToGameAction::class);
                         $action->execute($record, User::find($data['user_id']));
                     })
-                    ->visible(fn(Model $record) => $record->canAcceptPlayer())
-
-                ,
+                    ->visible(fn (Model $record) => $record->canAcceptPlayer()),
             ])
             ->bulkActions([
 

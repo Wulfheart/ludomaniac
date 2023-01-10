@@ -8,8 +8,6 @@ use Domain\Core\Models\Game;
 use Domain\Core\Models\Variant;
 use Domain\Users\Models\User;
 use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class UserBuilderTest extends TestCase
@@ -39,7 +37,6 @@ class UserBuilderTest extends TestCase
         $this->assertCount(9, $users);
         $this->assertNotContains($assignedUser, $users);
 
-
         $this->assertTrue(true);
     }
 
@@ -54,9 +51,6 @@ class UserBuilderTest extends TestCase
         $action = app(InitializeGameAction::class);
         $action->execute($game);
 
-
-
-
         // Test
         $users = User::query()->whereNotPlayingInGame($game->id)->get();
         $this->assertCount(10, $users);
@@ -67,7 +61,6 @@ class UserBuilderTest extends TestCase
         $users = User::query()->whereNotPlayingInGame($game->id)->get();
         $this->assertCount(9, $users);
         $this->assertNotContains($assignedUser, $users);
-
 
         $this->assertTrue(true);
     }
