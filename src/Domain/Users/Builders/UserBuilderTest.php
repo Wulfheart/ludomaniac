@@ -41,6 +41,34 @@ class UserBuilderTest extends TestCase
 
 
         $this->assertTrue(true);
+    }
 
+    public function test_where_not_signed_up_for_game(): void
+    {
+        // Setup
+        $this->seed(VariantSeeder::class);
+        User::factory(10)->create();
+
+        $game = Game::factory()->create(['variant_id' => Variant::first()->id]);
+        /** @var InitializeGameAction $action */
+        $action = app(InitializeGameAction::class);
+        $action->execute($game);
+
+
+
+
+        // Test
+        $users = User::query()->whereNotPlayingInGame($game->id)->get();
+        $this->assertCount(10, $users);
+
+        $assignedUser = $users->first();
+        $game->players()->first()->update(['user_id' => $assignedUser->id]);
+
+        $users = User::query()->whereNotPlayingInGame($game->id)->get();
+        $this->assertCount(9, $users);
+        $this->assertNotContains($assignedUser, $users);
+
+
+        $this->assertTrue(true);
     }
 }

@@ -10,7 +10,6 @@ class AssignUserToGameAction
 {
     public function execute(Player $player, User $user)
     {
-        dd($player, $user);
         $player->user_id = $user->id;
         $player->save();
     }

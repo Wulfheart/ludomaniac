@@ -3,6 +3,7 @@
 namespace Domain\Users\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Domain\Core\Models\GameSignedUpUsers;
 use Domain\Core\Models\Player;
 use Domain\Users\Builders\UserBuilder;
 use Domain\Users\Enums\RankEnum;
@@ -64,5 +65,10 @@ class User extends Authenticatable implements FilamentUser
     public function playsIn(): HasMany
     {
         return $this->hasMany(Player::class);
+    }
+
+    public function signedUpGames(): HasMany
+    {
+        return $this->hasMany(GameSignedUpUsers::class);
     }
 }

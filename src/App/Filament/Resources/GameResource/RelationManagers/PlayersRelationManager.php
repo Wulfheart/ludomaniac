@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources\GameResource\RelationManagers;
 
+use Closure;
 use Domain\Core\Actions\AssignUserToGameAction;
 use Domain\Core\Actions\BanUserFromGameAction;
 use Domain\Core\Models\Game;
 use Domain\Core\Models\Player;
+use Domain\Users\Builders\UserBuilder;
 use Domain\Users\Models\User;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -13,6 +15,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PlayersRelationManager extends RelationManager
@@ -44,39 +47,49 @@ class PlayersRelationManager extends RelationManager
             ])
             ->actions([
                 Tables\Actions\Action::make('ban')
-                    ->action(function (RelationManager $livewire) {
-                        dd($livewire->getOwnerRecord());
+                    ->action(function (RelationManager $livewire, Model $record) {
+                        /** @var Player $player */
+                        $player = $record;
                         /** @var BanUserFromGameAction $action */
                         $action = app(BanUserFromGameAction::class);
                         $action->execute($player);
                     })
-                    //->visible(fn(Player $player) => $player->canBeBanned())
+                    ->visible(fn(Model $record) => $record->canBeBanned())
                     ->requiresConfirmation(),
                 Tables\Actions\Action::make('Assign user')
                     ->form(function (RelationManager $livewire) {
                         /** @var Game $game */
                         $game = $livewire->getOwnerRecord();
+
                         return [
                             Forms\Components\Select::make('user_id')
-                                ->options(function () use ($game){
-                                    return User::query()->whereNotPlayingInGame($game->id)->pluck('name', 'id');
-                                })
-                                ->required(),
-                            Forms\Components\Hidden::make('player_id'),
+                                ->options(fn (callable $get) => User::query()
+                                    ->when(!$get('show_all_users'),
+                                        fn(UserBuilder $query) => $query->whereSignedUpForGame($game->id)
+                                    )
+                                    ->whereNotPlayingInGame($game->id)
+                                    ->pluck('name', 'id')
+                                )
+                                ->required()
+                                ->searchable(),
+                            Forms\Components\Toggle::make('show_all_users')
+                                ->hint("Show all users, even if they have not signed up for this game")
+                                ->offIcon('heroicon-s-eye-off')
+                                ->onIcon('heroicon-s-eye')
+                                ->reactive(),
                         ];
                     })
-                    ->action(function (array $data, Player $player) {
-                        dd($data, $player);
-                        /** @var AssignUserToGameAction $action */
+                    ->action(function (array $data, Model $record) {
+                        /** @var Player $record */
                         $action = app(AssignUserToGameAction::class);
-                        $action->execute($player, User::find($data['user_id']));
+                        $action->execute($record, User::find($data['user_id']));
                     })
-                    ->visible(fn(Player $player) => $player->canAcceptPlayer())
+                    ->visible(fn(Model $record) => $record->canAcceptPlayer())
 
                 ,
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+
             ]);
     }
 }

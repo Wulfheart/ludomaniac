@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\GameResource\Pages;
 use App\Filament\Resources\GameResource\RelationManagers\PlayersRelationManager;
+use App\Filament\Resources\GameResource\RelationManagers\SignedUpUsersRelationManager;
 use Domain\Core\Models\Game;
 use Filament\Forms;
 use Filament\Forms\Components\Repeater;
@@ -67,6 +68,7 @@ class GameResource extends Resource
     {
         return [
             PlayersRelationManager::class,
+            SignedUpUsersRelationManager::class
         ];
     }
 
