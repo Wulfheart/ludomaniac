@@ -9,6 +9,7 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Database\Eloquent\Model;
 
 class SignedUpUsersRelationManager extends RelationManager
 {
@@ -41,7 +42,9 @@ class SignedUpUsersRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user.name'),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->url(fn (Model $record) => 'https://zeit.de')
+                    ->openUrlInNewTab(),
             ])
             ->filters([
                 //

@@ -43,6 +43,7 @@ class PlayersRelationManager extends RelationManager
                 //
             ])
             ->actions([
+
                 Tables\Actions\Action::make('ban')
                     ->action(function (RelationManager $livewire, Model $record) {
                         /** @var Player $player */
@@ -52,6 +53,8 @@ class PlayersRelationManager extends RelationManager
                         $action->execute($player);
                     })
                     ->visible(fn (Model $record) => $record->canBeBanned())
+                    ->icon('heroicon-s-ban')
+                    ->color('danger')
                     ->requiresConfirmation(),
                 Tables\Actions\Action::make('Assign user')
                     ->form(function (RelationManager $livewire) {
