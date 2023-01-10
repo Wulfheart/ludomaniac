@@ -44,7 +44,7 @@ class VariantResource extends Resource
                     ->searchable(),
             ])
             ->filters([
-                //
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -57,7 +57,7 @@ class VariantResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+
         ];
     }
 

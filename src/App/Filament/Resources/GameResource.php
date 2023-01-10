@@ -54,7 +54,7 @@ class GameResource extends Resource
                 Tables\Columns\TextColumn::make('variant.name'),
             ])
             ->filters([
-                //
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

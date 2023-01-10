@@ -5,7 +5,6 @@ namespace App\Providers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 use Symfony\Component\Finder\Finder;
 
 class EventServiceProvider extends ServiceProvider
@@ -28,7 +27,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
     }
 
     /**
@@ -47,7 +45,8 @@ class EventServiceProvider extends ServiceProvider
             Finder::create()
                 ->in($this->app->basePath('src/Domain'))
                 ->directories()
-                ->getIterator())
+                ->getIterator()
+        )
             ->keys()
             ->toArray();
     }

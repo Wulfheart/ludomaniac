@@ -47,7 +47,7 @@ class SignedUpUsersRelationManager extends RelationManager
                     ->openUrlInNewTab(),
             ])
             ->filters([
-                //
+
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make(),

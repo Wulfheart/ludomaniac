@@ -37,10 +37,10 @@ class PlayersRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('user.name')->default('Kein Nutzer zugewiesen'),
             ])
             ->filters([
-                //
+
             ])
             ->headerActions([
-                //
+
             ])
             ->actions([
 
@@ -63,12 +63,14 @@ class PlayersRelationManager extends RelationManager
 
                         return [
                             Forms\Components\Select::make('user_id')
-                                ->options(fn (callable $get) => User::query()
-                                    ->when(! $get('show_all_users'),
-                                        fn (UserBuilder $query) => $query->whereSignedUpForGame($game->id)
-                                    )
-                                    ->whereNotPlayingInGame($game->id)
-                                    ->pluck('name', 'id')
+                                ->options(
+                                    fn (callable $get) => User::query()
+                                        ->when(
+                                            ! $get('show_all_users'),
+                                            fn (UserBuilder $query) => $query->whereSignedUpForGame($game->id)
+                                        )
+                                        ->whereNotPlayingInGame($game->id)
+                                        ->pluck('name', 'id')
                                 )
                                 ->required()
                                 ->searchable(),
