@@ -2,6 +2,7 @@
 
 namespace Domain\Core\Models;
 
+use Domain\Core\Builders\PlayerBuilder;
 use Domain\Users\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,6 +15,11 @@ class Player extends Model
     protected $guarded = [
         'id',
     ];
+
+    public function newEloquentBuilder($query): PlayerBuilder
+    {
+        return new PlayerBuilder($query);
+    }
 
     public function game(): BelongsTo
     {

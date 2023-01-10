@@ -15,6 +15,11 @@ class Game extends Model
         'id',
     ];
 
+    protected $casts = [
+        'started_at' => 'datetime',
+        'finished_at' => 'datetime',
+    ];
+
     public function variant(): BelongsTo
     {
         return $this->belongsTo(Variant::class);
