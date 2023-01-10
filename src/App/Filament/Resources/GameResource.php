@@ -28,6 +28,7 @@ class GameResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->disabledOn('edit')
                     ->unique(ignoreRecord: true),
                 Forms\Components\Select::make('variant_id')
                     ->relationship('variant', 'name')

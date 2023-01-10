@@ -10,7 +10,6 @@ class MarkGameAsStartedOnFullAssignmentListener
 {
     public function __construct()
     {
-        //
     }
 
     public function handle(UserAssignedToGameEvent $userAssignedToGameEvent): void

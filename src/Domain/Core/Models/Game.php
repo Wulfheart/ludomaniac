@@ -34,4 +34,14 @@ class Game extends Model
     {
         return $this->hasMany(GameSignedUpUsers::class);
     }
+
+    public function hasStarted(): bool
+    {
+        return $this->started_at !== null && $this->started_at->isPast();
+    }
+
+    public function hasFinished(): bool
+    {
+        return $this->finished_at !== null && $this->finished_at->isPast();
+    }
 }
