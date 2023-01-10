@@ -16,7 +16,7 @@ class MarkGameAsStartedOnFullAssignmentListener
     public function handle(UserAssignedToGameEvent $userAssignedToGameEvent): void
     {
         $game = Game::with('players')->findOrFail($userAssignedToGameEvent->gameId);
-        if($game->players()->whereDoesntHaveAnAssignedUser()->exists()){
+        if ($game->players()->whereDoesntHaveAnAssignedUser()->exists()) {
             return;
         }
 
