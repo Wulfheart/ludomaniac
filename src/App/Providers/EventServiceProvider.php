@@ -22,11 +22,6 @@ class EventServiceProvider extends ServiceProvider
         ],
     ];
 
-    protected $observers = [
-        Player::class => [
-            PlayerObserver::class,
-        ],
-    ];
 
     /**
      * Register any events for your application.

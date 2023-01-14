@@ -5,6 +5,7 @@ namespace App\Providers;
 use DB;
 use Domain\Core\Models\Player;
 use Domain\Core\Observers\PlayerObserver;
+use Filament\Facades\Filament;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;

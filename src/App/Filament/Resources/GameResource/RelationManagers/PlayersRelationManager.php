@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\GameResource\RelationManagers;
 
+use Closure;
 use Domain\Core\Actions\AddNMRForPlayerAction;
 use Domain\Core\Actions\AssignUserToGameAction;
 use Domain\Core\Actions\BanUserFromGameAction;
@@ -23,6 +24,16 @@ class PlayersRelationManager extends RelationManager
 
     protected static ?string $recordTitleAttribute = 'player_id';
 
+    public static function getModelLabel(): string
+    {
+        return __('core/player.name_singular');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('core/player.name_singular');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -35,9 +46,9 @@ class PlayersRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('power.name'),
-                Tables\Columns\TextColumn::make('user.name')->default('Kein Nutzer zugewiesen'),
-                Tables\Columns\TextColumn::make('nmr_count')->label('NMRs')->color(fn (Model $record) => $record->nmr_count > 2 ? 'danger' : ''),
+                Tables\Columns\TextColumn::make('power.name')->label(__('core/player.attributes.power')),
+                Tables\Columns\TextColumn::make('user.name')->label(__('users/user.name_singular'))->default('Kein Nutzer zugewiesen'),
+                Tables\Columns\TextColumn::make('nmr_count')->label(__('core/player.attributes.nmr_count'))->color(fn (Model $record) => $record->nmr_count > 2 ? 'danger' : ''),
             ])
             ->filters([
 
@@ -48,12 +59,14 @@ class PlayersRelationManager extends RelationManager
             ->actions([
                 Tables\Actions\Action::make('nmr')
                     ->action(fn(Model $record, AddNMRForPlayerAction $actor) => $actor->execute($record))
+                    ->label(__('core/player.actions.nmr'))
                     ->visible(function (Model $record) {
-                        //$record->game->load()
-                        return $record->game->currentState() === GameStateEnum::STARTED;
+                        return $record->game->currentState() === GameStateEnum::STARTED && $record->user_id !== null;
                     })
+                    ->icon('heroicon-o-plus')
                     ->requiresConfirmation(),
                 Tables\Actions\Action::make('ban')
+                    ->label(__('core/player.actions.ban'))
                     ->action(function (RelationManager $livewire, Model $record) {
                         /** @var Player $player */
                         $player = $record;
@@ -66,12 +79,15 @@ class PlayersRelationManager extends RelationManager
                     ->color('danger')
                     ->requiresConfirmation(),
                 Tables\Actions\Action::make('Assign user')
+                    ->label(__('core/player.actions.assign'))
+                    ->modalHeading(__('core/player.assign_users.title'))
                     ->form(function (RelationManager $livewire) {
                         /** @var Game $game */
                         $game = $livewire->getOwnerRecord();
 
                         return [
                             Forms\Components\Select::make('user_id')
+                                ->label(__('users/user.name_plural'))
                                 ->options(
                                     fn(callable $get) => User::query()
                                         ->when(
@@ -84,7 +100,8 @@ class PlayersRelationManager extends RelationManager
                                 ->required()
                                 ->searchable(),
                             Forms\Components\Toggle::make('show_all_users')
-                                ->hint('Show all users, even if they have not signed up for this game')
+                                ->label(__('core/player.assign_users.show_all_users'))
+                                ->hint(__('core/player.assign_users.show_all_users_hint'))
                                 ->offIcon('heroicon-s-eye-off')
                                 ->onIcon('heroicon-s-eye')
                                 ->reactive(),

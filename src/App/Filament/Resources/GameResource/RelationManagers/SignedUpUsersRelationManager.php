@@ -17,6 +17,17 @@ class SignedUpUsersRelationManager extends RelationManager
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    public static function getModelLabel(): string
+    {
+        return __('core/game_signed_up_user.name_singular');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('core/game_signed_up_user.name_plural');
+    }
+
+
     public static function form(Form $form): Form
     {
         return $form
@@ -43,7 +54,8 @@ class SignedUpUsersRelationManager extends RelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')
-                    ->url(fn (Model $record) => 'https://zeit.de')
+                    ->label(__('users/user.name_singular'))
+                    //->url(fn (Model $record) => 'https://zeit.de')
                     ->openUrlInNewTab(),
             ])
             ->filters([
@@ -53,7 +65,7 @@ class SignedUpUsersRelationManager extends RelationManager
                 Tables\Actions\CreateAction::make(),
             ])
             ->actions([
-                Tables\Actions\DeleteAction::make()->label('Remove'),
+                Tables\Actions\DeleteAction::make()->label(__('core/game_signed_up_user.actions.remove')),
             ])
             ->bulkActions([
                 //Tables\Actions\DeleteBulkAction::make(),

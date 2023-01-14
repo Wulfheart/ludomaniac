@@ -22,20 +22,33 @@ class GameResource extends Resource
 
     protected static ?string $navigationGroup = 'Spielleiter';
 
+    public static function getModelLabel(): string
+    {
+        return __('core/game.name_singular');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('core/game.name_plural');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label(__('core/game.attributes.name'))
                     ->required()
                     ->disabledOn('edit')
                     ->unique(ignoreRecord: true),
                 Forms\Components\Select::make('variant_id')
+                    ->label(__('core/variant.name_singular'))
                     ->relationship('variant', 'name')
                     ->required()
                     ->disabledOn('edit')
                     ->dehydrated(fn (Page $livewire) => $livewire instanceof CreateRecord),
                 Forms\Components\MarkdownEditor::make('description')
+                    ->label(__('core/game.attributes.description'))
                     ->disableToolbarButtons([
                         'attachFiles',
                         'codeBlock',
