@@ -58,6 +58,7 @@ class GameResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -77,6 +78,7 @@ class GameResource extends Resource
         return [
             'index' => Pages\ListGames::route('/'),
             'create' => Pages\CreateGame::route('/create'),
+            'view' => Pages\ViewGame::route('/{record}'),
             'edit' => Pages\EditGame::route('/{record}/edit'),
         ];
     }

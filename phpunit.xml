@@ -10,6 +10,8 @@
         </testsuite>
         <testsuite name="Feature">
             <directory suffix="Test.php">./src/Domain/**/Builders</directory>
+            <directory suffix="Test.php">./src/Domain/**/Models</directory>
+            <directory suffix="Test.php">./src/Domain/**/Observers</directory>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">

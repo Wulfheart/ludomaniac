@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use DB;
+use Domain\Core\Models\Player;
+use Domain\Core\Observers\PlayerObserver;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
@@ -28,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             return 'Database\\Factories\\'.class_basename($modelName).'Factory';
         });
 
-        Model::shouldBeStrict();
-        Model::preventLazyLoading(config('app.env') === 'production');
+        // TODO: Open an issue at filament to allow this
+        // Model::shouldBeStrict(config('app.env') !== 'production');
     }
 }

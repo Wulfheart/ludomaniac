@@ -2,6 +2,7 @@
 
 namespace Domain\Core\Models;
 
+use Domain\Core\Enums\GameStateEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -35,13 +36,12 @@ class Game extends Model
         return $this->hasMany(GameSignedUpUsers::class);
     }
 
-    public function hasStarted(): bool
+    public function currentState(): GameStateEnum
     {
-        return $this->started_at !== null && $this->started_at->isPast();
-    }
-
-    public function hasFinished(): bool
-    {
-        return $this->finished_at !== null && $this->finished_at->isPast();
+        return match (true) {
+            $this->finished_at?->isPast() => GameStateEnum::FINISHED,
+            $this->started_at?->isPast() => GameStateEnum::STARTED,
+            default => GameStateEnum::NOT_STARTED,
+        };
     }
 }

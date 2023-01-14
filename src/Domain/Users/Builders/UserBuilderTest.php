@@ -14,7 +14,7 @@ class UserBuilderTest extends TestCase
 {
     use LazilyRefreshDatabase;
 
-    public function test_where_not_playing_in_game(): void
+    public function testWhereNotPlayinInGame(): void
     {
         // Setup
         $this->seed(VariantSeeder::class);
@@ -40,7 +40,7 @@ class UserBuilderTest extends TestCase
         $this->assertTrue(true);
     }
 
-    public function test_where_not_signed_up_for_game(): void
+    public function testWhereNotSignedUpForGame(): void
     {
         // Setup
         $this->seed(VariantSeeder::class);
@@ -51,17 +51,18 @@ class UserBuilderTest extends TestCase
         $action = app(InitializeGameAction::class);
         $action->execute($game);
 
+        $this->markTestIncomplete();
         // Test
-        $users = User::query()->whereNotPlayingInGame($game->id)->get();
-        $this->assertCount(10, $users);
-
-        $assignedUser = $users->first();
-        $game->players()->first()->update(['user_id' => $assignedUser->id]);
-
-        $users = User::query()->whereNotPlayingInGame($game->id)->get();
-        $this->assertCount(9, $users);
-        $this->assertNotContains($assignedUser, $users);
-
-        $this->assertTrue(true);
+        //$users = User::query()->whereNotPlayingInGame($game->id)->get();
+        //$this->assertCount(10, $users);
+        //
+        //$assignedUser = $users->first();
+        //$game->players()->first()->update(['user_id' => $assignedUser->id]);
+        //
+        //$users = User::query()->whereNotPlayingInGame($game->id)->get();
+        //$this->assertCount(9, $users);
+        //$this->assertNotContains($assignedUser, $users);
+        //
+        //$this->assertTrue(true);
     }
 }

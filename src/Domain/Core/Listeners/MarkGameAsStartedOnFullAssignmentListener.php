@@ -2,6 +2,7 @@
 
 namespace Domain\Core\Listeners;
 
+use Domain\Core\Enums\GameStateEnum;
 use Domain\Core\Events\GameStartedEvent;
 use Domain\Core\Events\UserAssignedToGameEvent;
 use Domain\Core\Models\Game;
@@ -15,6 +16,11 @@ class MarkGameAsStartedOnFullAssignmentListener
     public function handle(UserAssignedToGameEvent $userAssignedToGameEvent): void
     {
         $game = Game::with('players')->findOrFail($userAssignedToGameEvent->gameId);
+
+        if ($game->currentState() === GameStateEnum::STARTED) {
+            return;
+        }
+
         if ($game->players()->whereDoesntHaveAnAssignedUser()->exists()) {
             return;
         }

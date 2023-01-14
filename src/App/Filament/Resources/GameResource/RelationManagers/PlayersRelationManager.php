@@ -2,8 +2,10 @@
 
 namespace App\Filament\Resources\GameResource\RelationManagers;
 
+use Domain\Core\Actions\AddNMRForPlayerAction;
 use Domain\Core\Actions\AssignUserToGameAction;
 use Domain\Core\Actions\BanUserFromGameAction;
+use Domain\Core\Enums\GameStateEnum;
 use Domain\Core\Models\Game;
 use Domain\Core\Models\Player;
 use Domain\Users\Builders\UserBuilder;
@@ -35,6 +37,7 @@ class PlayersRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('power.name'),
                 Tables\Columns\TextColumn::make('user.name')->default('Kein Nutzer zugewiesen'),
+                Tables\Columns\TextColumn::make('nmr_count')->label('NMRs')->color(fn (Model $record) => $record->nmr_count > 2 ? 'danger' : ''),
             ])
             ->filters([
 
@@ -43,7 +46,13 @@ class PlayersRelationManager extends RelationManager
 
             ])
             ->actions([
-
+                Tables\Actions\Action::make('nmr')
+                    ->action(fn(Model $record, AddNMRForPlayerAction $actor) => $actor->execute($record))
+                    ->visible(function (Model $record) {
+                        //$record->game->load()
+                        return $record->game->currentState() === GameStateEnum::STARTED;
+                    })
+                    ->requiresConfirmation(),
                 Tables\Actions\Action::make('ban')
                     ->action(function (RelationManager $livewire, Model $record) {
                         /** @var Player $player */
@@ -52,7 +61,7 @@ class PlayersRelationManager extends RelationManager
                         $action = app(BanUserFromGameAction::class);
                         $action->execute($player);
                     })
-                    ->visible(fn (Model $record) => $record->canBeBanned())
+                    ->visible(fn(Model $record) => $record->canBeBanned())
                     ->icon('heroicon-s-ban')
                     ->color('danger')
                     ->requiresConfirmation(),
@@ -64,10 +73,10 @@ class PlayersRelationManager extends RelationManager
                         return [
                             Forms\Components\Select::make('user_id')
                                 ->options(
-                                    fn (callable $get) => User::query()
+                                    fn(callable $get) => User::query()
                                         ->when(
-                                            ! $get('show_all_users'),
-                                            fn (UserBuilder $query) => $query->whereSignedUpForGame($game->id)
+                                            !$get('show_all_users'),
+                                            fn(UserBuilder $query) => $query->whereSignedUpForGame($game->id)
                                         )
                                         ->whereNotPlayingInGame($game->id)
                                         ->pluck('name', 'id')
@@ -86,7 +95,7 @@ class PlayersRelationManager extends RelationManager
                         $action = app(AssignUserToGameAction::class);
                         $action->execute($record, User::find($data['user_id']));
                     })
-                    ->visible(fn (Model $record) => $record->canAcceptPlayer()),
+                    ->visible(fn(Model $record) => $record->canAcceptPlayer()),
             ])
             ->bulkActions([
 
