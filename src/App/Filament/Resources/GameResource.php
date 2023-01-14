@@ -6,6 +6,7 @@ use App\Filament\Resources\GameResource\Pages;
 use App\Filament\Resources\GameResource\RelationManagers\PlayersRelationManager;
 use App\Filament\Resources\GameResource\RelationManagers\SignedUpUsersRelationManager;
 use Domain\Core\Models\Game;
+use Domain\Users\Builders\UserBuilder;
 use Filament\Forms;
 use Filament\Pages\Page;
 use Filament\Resources\Form;
@@ -47,6 +48,11 @@ class GameResource extends Resource
                     ->required()
                     ->disabledOn('edit')
                     ->dehydrated(fn (Page $livewire) => $livewire instanceof CreateRecord),
+                Forms\Components\Select::make('game_master_id')
+                    ->label(__('core/game.attributes.game_master'))
+                    ->disabledOn('edit')
+                    ->dehydrated(fn (Page $livewire) => $livewire instanceof CreateRecord)
+                    ->relationship('gameMaster', 'name', fn(UserBuilder $query) => $query->whereIsGameMaster()),
                 Forms\Components\MarkdownEditor::make('description')
                     ->label(__('core/game.attributes.description'))
                     ->disableToolbarButtons([
@@ -91,7 +97,6 @@ class GameResource extends Resource
         return [
             'index' => Pages\ListGames::route('/'),
             'create' => Pages\CreateGame::route('/create'),
-            'view' => Pages\ViewGame::route('/{record}'),
             'edit' => Pages\EditGame::route('/{record}/edit'),
         ];
     }

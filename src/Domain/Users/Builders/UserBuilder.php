@@ -28,4 +28,8 @@ class UserBuilder extends Builder
             $query->where('game_id', $gameId);
         });
     }
+
+    public function whereIsGameMaster(): self {
+        return $this->where('is_game_master', true);
+    }
 }

@@ -19,14 +19,26 @@ class VariantResource extends Resource
 
     protected static ?string $navigationGroup = 'Admin';
 
+    public static function getModelLabel(): string
+    {
+        return __('core/variant.name_singular');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('core/variant.name_plural');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label(__('core/variant.attributes.name'))
                     ->required()
                     ->unique(ignoreRecord: true),
                 MarkdownEditor::make('description')
+                    ->label(__('core/variant.attributes.description'))
                     ->disableToolbarButtons([
                         'attachFiles',
                         'codeBlock',
@@ -40,6 +52,7 @@ class VariantResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label(__('core/variant.attributes.name'))
                     ->sortable()
                     ->searchable(),
             ])

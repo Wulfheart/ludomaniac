@@ -2,7 +2,7 @@
 
 namespace Domain\Core\Actions;
 
-use App\Core\BanLog;
+use Domain\Core\Models\BanLog;
 use Domain\Core\Models\Player;
 
 class BanUserFromGameAction

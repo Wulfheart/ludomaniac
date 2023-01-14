@@ -7,6 +7,6 @@ return [
         'name' => "Name",
         'description' => "Beschreibung",
         'signed_up_users' => "Anmeldungen",
-
+        'game_master' => "Spielleiter",
     ]
 ];

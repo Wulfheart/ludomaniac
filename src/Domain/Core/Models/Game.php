@@ -3,6 +3,7 @@
 namespace Domain\Core\Models;
 
 use Domain\Core\Enums\GameStateEnum;
+use Domain\Users\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -34,6 +35,11 @@ class Game extends Model
     public function signedUpUsers(): HasMany
     {
         return $this->hasMany(GameSignedUpUsers::class);
+    }
+
+    public function gameMaster(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'game_master_id');
     }
 
     public function currentState(): GameStateEnum
