@@ -72,7 +72,7 @@ class GameResource extends Resource
                     ->options(GameEndTypeEnumHelper::formatForFilamentSelect(GameEndTypeEnum::cases()))
                     ->disabled()
                     ->dehydrated()
-                    ->visible(fn(Game $record) => $record->currentState() === GameStateEnum::FINISHED),
+                    ->visible(fn (Game $record) => $record->currentState() === GameStateEnum::FINISHED),
                 Forms\Components\MarkdownEditor::make('description')
                     ->label(__('core/game.attributes.description'))
                     ->disableToolbarButtons([

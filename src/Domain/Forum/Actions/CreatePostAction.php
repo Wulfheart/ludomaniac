@@ -20,7 +20,5 @@ class CreatePostAction
         ]);
 
         PostCreatedEvent::dispatch($post->id, $firstPost);
-
-
     }
 }

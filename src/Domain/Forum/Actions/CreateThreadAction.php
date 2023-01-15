@@ -9,11 +9,9 @@ use Domain\Users\Models\User;
 
 class CreateThreadAction
 {
-
     public function __construct(
         protected CreatePostAction $createPostAction,
-    )
-    {
+    ) {
     }
 
     public function execute(Category $category, User $user, string $title, string $firstText): void
@@ -24,7 +22,6 @@ class CreateThreadAction
         ]);
 
         $this->createPostAction->execute($thread, $user, $firstText);
-
 
         ThreadCreatedEvent::dispatch($thread->id);
     }
