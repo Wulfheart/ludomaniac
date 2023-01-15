@@ -37,6 +37,7 @@ class SignedUpUsersRelationManager extends RelationManager
 
                 return [
                     Forms\Components\Select::make('user_id')
+                        ->label(__('users/user.name_singular'))
                         ->options(function () use ($game) {
                             return User::query()
                                 ->whereNotSignedUpForGame($game->id)
@@ -62,7 +63,7 @@ class SignedUpUsersRelationManager extends RelationManager
 
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                Tables\Actions\CreateAction::make()->hidden(fn(self $livewire) => $livewire->getOwnerRecord()->signedUpUsers()->count() >= 7),
             ])
             ->actions([
                 Tables\Actions\DeleteAction::make()->label(__('core/game_signed_up_user.actions.remove')),

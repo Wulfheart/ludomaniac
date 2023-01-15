@@ -34,6 +34,16 @@ class GamePolicy
         return $user->is_admin || ($game->game_master_id !== null && $game->game_master_id === $user->id);
     }
 
+    public function updateGameMaster(User $user, Game $game): bool
+    {
+        return $user->is_admin;
+    }
+
+    public function updateName(User $user, Game $game): bool
+    {
+        return $user->is_admin;
+    }
+
     public function delete(User $user, Game $game): bool
     {
         return false;

@@ -7,6 +7,7 @@ use App\Filament\Resources\GameResource\RelationManagers\PlayersRelationManager;
 use App\Filament\Resources\GameResource\RelationManagers\SignedUpUsersRelationManager;
 use Domain\Core\Models\Game;
 use Domain\Users\Builders\UserBuilder;
+use Domain\Users\Models\User;
 use Filament\Forms;
 use Filament\Pages\Page;
 use Filament\Resources\Form;
@@ -17,6 +18,8 @@ use Filament\Tables;
 
 class GameResource extends Resource
 {
+    use PartiallyEditable;
+
     protected static ?string $model = Game::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
@@ -35,12 +38,17 @@ class GameResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $canUpdateNameAndGameMasterCallback = function (User $user, Game $record): bool {
+            return $user->is_admin;
+        };
+
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->label(__('core/game.attributes.name'))
                     ->required()
-                    ->disabledOn('edit')
+                    ->disabled(! static::allowedToModify($canUpdateNameAndGameMasterCallback))
+                    ->dehydrated(static::allowedToModify($canUpdateNameAndGameMasterCallback))
                     ->unique(ignoreRecord: true),
                 Forms\Components\Select::make('variant_id')
                     ->label(__('core/variant.name_singular'))
@@ -50,8 +58,8 @@ class GameResource extends Resource
                     ->dehydrated(fn (Page $livewire) => $livewire instanceof CreateRecord),
                 Forms\Components\Select::make('game_master_id')
                     ->label(__('core/game.attributes.game_master'))
-                    ->disabledOn('edit')
-                    ->dehydrated(fn (Page $livewire) => $livewire instanceof CreateRecord)
+                    ->disabled(! static::allowedToModify($canUpdateNameAndGameMasterCallback))
+                    ->dehydrated(static::allowedToModify($canUpdateNameAndGameMasterCallback))
                     ->relationship('gameMaster', 'name', fn(UserBuilder $query) => $query->whereIsGameMaster()),
                 Forms\Components\MarkdownEditor::make('description')
                     ->label(__('core/game.attributes.description'))
@@ -77,7 +85,6 @@ class GameResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
