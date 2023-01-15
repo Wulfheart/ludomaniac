@@ -5,5 +5,5 @@ return [
     'name_plural' => 'Anmeldungen',
     'actions' => [
         'remove' => 'Entfernen',
-    ]
+    ],
 ];

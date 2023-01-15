@@ -6,13 +6,11 @@ use Domain\Users\Models\User;
 use Filament\Pages\Page;
 use Filament\Resources\Pages\CreateRecord;
 use Filament\Resources\Pages\EditRecord;
-use Filament\Resources\Resource;
 use Illuminate\Auth\AuthManager;
 use Illuminate\Database\Eloquent\Model;
 
 trait PartiallyEditable
 {
-
     /**
      * @param \Closure(User $user, Model $record): bool $editCallback
      * @return \Closure(Page $livewire, AuthManager $authManager, ?Model $record): bool
@@ -29,12 +27,10 @@ trait PartiallyEditable
                 if ($user instanceof User) {
                     return $editCallback($user, $record);
                 }
-                throw new \TypeError('User is not an instance of ' . User::class);
+                throw new \TypeError('User is not an instance of '.User::class);
             }
 
             return false;
         };
     }
-
-
 }

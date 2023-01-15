@@ -29,7 +29,8 @@ class UserBuilder extends Builder
         });
     }
 
-    public function whereIsGameMaster(): self {
+    public function whereIsGameMaster(): self
+    {
         return $this->where('is_game_master', true);
     }
 }

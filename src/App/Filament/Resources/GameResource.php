@@ -60,7 +60,7 @@ class GameResource extends Resource
                     ->label(__('core/game.attributes.game_master'))
                     ->disabled(! static::allowedToModify($canUpdateNameAndGameMasterCallback))
                     ->dehydrated(static::allowedToModify($canUpdateNameAndGameMasterCallback))
-                    ->relationship('gameMaster', 'name', fn(UserBuilder $query) => $query->whereIsGameMaster()),
+                    ->relationship('gameMaster', 'name', fn (UserBuilder $query) => $query->whereIsGameMaster()),
                 Forms\Components\TextInput::make('phase')
                     ->label(__('core/game.attributes.phase'))
                     ->default(config('ludomaniac.default_year')),

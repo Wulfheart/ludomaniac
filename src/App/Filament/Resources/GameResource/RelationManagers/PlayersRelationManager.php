@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\GameResource\RelationManagers;
 
-use Closure;
 use Domain\Core\Actions\AddNMRForPlayerAction;
 use Domain\Core\Actions\AssignUserToGameAction;
 use Domain\Core\Actions\BanUserFromGameAction;
@@ -39,7 +38,6 @@ class PlayersRelationManager extends RelationManager
         'filament.ludomaniac.game.finish' => '$refresh',
     ];
 
-
     public static function form(Form $form): Form
     {
         return $form
@@ -53,6 +51,7 @@ class PlayersRelationManager extends RelationManager
         $gameFinishedCallback = function (self $livewire) {
             /** @var Game $game */
             $game = $livewire->getOwnerRecord();
+
             return $game->currentState() === GameStateEnum::FINISHED;
         };
 
@@ -68,7 +67,7 @@ class PlayersRelationManager extends RelationManager
                     ->label(__('users/user.name_singular'))->default('Kein Nutzer zugewiesen'),
                 Tables\Columns\TextColumn::make('nmr_count')
                     ->label(__('core/player.attributes.nmr_count'))
-                    ->color(fn(Model $record) => $record->nmr_count > 2 ? 'danger' : ''),
+                    ->color(fn (Model $record) => $record->nmr_count > 2 ? 'danger' : ''),
                 TextInputColumn::make('sc_count')
                     ->label(__('core/player.attributes.sc_count'))
                     ->type('number')
@@ -77,7 +76,7 @@ class PlayersRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('sc_count_alternative')
                     ->label(__('core/player.attributes.sc_count'))
                     ->visible($gameFinishedCallback)
-                    ->getStateUsing(fn(Player $record) => $record->sc_count),
+                    ->getStateUsing(fn (Player $record) => $record->sc_count),
             ])
             ->defaultSort('rank')
             ->filters([
@@ -88,7 +87,7 @@ class PlayersRelationManager extends RelationManager
             ])
             ->actions([
                 Tables\Actions\Action::make('nmr')
-                    ->action(fn(Model $record, AddNMRForPlayerAction $actor) => $actor->execute($record))
+                    ->action(fn (Model $record, AddNMRForPlayerAction $actor) => $actor->execute($record))
                     ->label(__('core/player.actions.nmr'))
                     ->visible(function (Model $record) {
                         return $record->game->currentState() === GameStateEnum::STARTED && $record->user_id !== null;
@@ -106,7 +105,7 @@ class PlayersRelationManager extends RelationManager
                         $action->execute($player);
                     })
                     ->hidden($gameFinishedCallback)
-                    ->visible(fn(Model $record) => $record->canBeBanned())
+                    ->visible(fn (Model $record) => $record->canBeBanned())
                     ->icon('heroicon-s-ban')
                     ->color('danger')
                     ->requiresConfirmation(),
@@ -122,10 +121,10 @@ class PlayersRelationManager extends RelationManager
                             Forms\Components\Select::make('user_id')
                                 ->label(__('users/user.name_plural'))
                                 ->options(
-                                    fn(callable $get) => User::query()
+                                    fn (callable $get) => User::query()
                                         ->when(
-                                            !$get('show_all_users'),
-                                            fn(UserBuilder $query) => $query->whereSignedUpForGame($game->id)
+                                            ! $get('show_all_users'),
+                                            fn (UserBuilder $query) => $query->whereSignedUpForGame($game->id)
                                         )
                                         ->whereNotPlayingInGame($game->id)
                                         ->pluck('name', 'id')
@@ -145,7 +144,7 @@ class PlayersRelationManager extends RelationManager
                         $action = app(AssignUserToGameAction::class);
                         $action->execute($record, User::find($data['user_id']));
                     })
-                    ->visible(fn(Model $record) => $record->canAcceptPlayer()),
+                    ->visible(fn (Model $record) => $record->canAcceptPlayer()),
             ])
             ->bulkActions([
 

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('phase')->default('');
             $table->dateTime('started_at')->nullable();
             $table->dateTime('finished_at')->nullable();
+            $table->string('game_end_type')->nullable();
             $table->timestamps();
         });
     }

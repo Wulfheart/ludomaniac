@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'name_singular' => "Variante",
-    'name_plural' => "Varianten",
+    'name_singular' => 'Variante',
+    'name_plural' => 'Varianten',
     'attributes' => [
-        'name' => "Name",
-        'description' => "Beschreibung",
+        'name' => 'Name',
+        'description' => 'Beschreibung',
     ],
 ];

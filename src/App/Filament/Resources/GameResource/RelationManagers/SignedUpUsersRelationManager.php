@@ -18,7 +18,7 @@ class SignedUpUsersRelationManager extends RelationManager
     protected static ?string $recordTitleAttribute = 'name';
 
     protected $listeners = [
-        'filament.ludomaniac.game.finish' =>  '$refresh',
+        'filament.ludomaniac.game.finish' => '$refresh',
     ];
 
     public static function getModelLabel(): string
@@ -30,7 +30,6 @@ class SignedUpUsersRelationManager extends RelationManager
     {
         return __('core/game_signed_up_user.name_plural');
     }
-
 
     public static function form(Form $form): Form
     {
@@ -67,7 +66,7 @@ class SignedUpUsersRelationManager extends RelationManager
 
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make()->hidden(fn(self $livewire) => $livewire->getOwnerRecord()->signedUpUsers()->count() >= 7),
+                Tables\Actions\CreateAction::make()->hidden(fn (self $livewire) => $livewire->getOwnerRecord()->signedUpUsers()->count() >= 7),
             ])
             ->actions([
                 Tables\Actions\DeleteAction::make()->label(__('core/game_signed_up_user.actions.remove')),

@@ -2,22 +2,20 @@
 
 namespace Domain\Core\Models;
 
-use Database\Seeders\VariantSeeder;
-use Domain\Core\Actions\InitializeGameAction;
 use Domain\Users\Models\User;
-use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\GameTestCase;
-use Tests\TestCase;
 
-class PlayerTest extends GameTestCase {
+class PlayerTest extends GameTestCase
+{
     use RefreshDatabase;
 
-    public function testNmrsRelation(){
+    public function testNmrsRelation()
+    {
         $game = $this->initializeGame();
         $game->loadMissing('players');
 
-        $game->players->each(function(Player $player){
+        $game->players->each(function (Player $player) {
             $player->user_id = User::factory()->create()->id;
             $player->save();
         });
@@ -28,7 +26,6 @@ class PlayerTest extends GameTestCase {
 
         $player->load('NMRs');
         $this->assertCount(0, $player->NMRs);
-
 
         NMR::create([
             'game_id' => $game->id,
@@ -46,8 +43,5 @@ class PlayerTest extends GameTestCase {
         ]);
         $player->load('NMRs');
         $this->assertCount(1, $player->NMRs);
-
-
-
     }
 }

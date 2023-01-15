@@ -10,7 +10,7 @@ use Domain\Users\Models\User;
 
 class GameTestCase extends TestCase
 {
-    public function initializeGame() : Game
+    public function initializeGame(): Game
     {
         // Setup
         $this->seed(VariantSeeder::class);
@@ -23,5 +23,4 @@ class GameTestCase extends TestCase
 
         return $game;
     }
-
 }

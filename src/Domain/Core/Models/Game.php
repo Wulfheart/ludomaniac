@@ -2,6 +2,7 @@
 
 namespace Domain\Core\Models;
 
+use Domain\Core\Enums\GameEndTypeEnum;
 use Domain\Core\Enums\GameStateEnum;
 use Domain\Users\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,6 +21,7 @@ class Game extends Model
     protected $casts = [
         'started_at' => 'datetime',
         'finished_at' => 'datetime',
+        'game_end_type' => GameEndTypeEnum::class,
     ];
 
     public function variant(): BelongsTo
@@ -49,5 +51,24 @@ class Game extends Model
             $this->started_at?->isPast() => GameStateEnum::STARTED,
             default => GameStateEnum::NOT_STARTED,
         };
+    }
+
+    /**
+     * @return array<GameEndTypeEnum>
+     */
+    public function getPossibleGameEndTypes(): array
+    {
+        $playersWithMaxScCount = $this->players()
+            ->selectRaw('sc_count, count(*) as num_of_players')
+            ->groupBy('sc_count')
+            ->orderByDesc('sc_count')
+            ->first('num_of_players')
+            ->toArray();
+
+        if ($playersWithMaxScCount !== 1) {
+            return GameEndTypeEnum::cases();
+        }
+
+        return [GameEndTypeEnum::DRAW];
     }
 }

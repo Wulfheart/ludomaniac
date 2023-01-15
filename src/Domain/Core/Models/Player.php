@@ -4,13 +4,10 @@ namespace Domain\Core\Models;
 
 use Domain\Core\Builders\PlayerBuilder;
 use Domain\Users\Models\User;
-use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
-use function PHPUnit\Framework\assertTrue;
 
 class Player extends Model
 {
@@ -48,7 +45,6 @@ class Player extends Model
     //    //return $this->hasMany(NMR::class, 'user_id', 'user_id')->where('game_id', $this->game_id);
     //}
 
-
     public function canBeBanned(): bool
     {
         return $this->user_id !== null;
@@ -58,5 +54,4 @@ class Player extends Model
     {
         return $this->user_id === null;
     }
-
 }
