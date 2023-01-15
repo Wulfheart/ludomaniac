@@ -30,13 +30,12 @@ class EditGame extends EditRecord
                 ->form([
                     Select::make('end_type')
                         ->label(__('core/game.attributes.game_end_type'))
-                        ->options(fn (Game $record) => // TODO: Test
+                        ->options(fn(Game $record) => // TODO: Test
                         collect($record->getPossibleGameEndTypes())
                             ->pluck('value', 'name')
                             ->flip()
-                            ->map(fn (string $value) => __('core/game.states.game_end_type.'.$value))
+                            ->map(fn(string $value) => __('core/game.states.game_end_type.' . $value))
                             ->toArray()
-
                         ),
                 ])
                 ->label(__('core/game.actions.finish'))

@@ -2,9 +2,12 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Helpers\GameEndTypeEnumHelper;
 use App\Filament\Resources\GameResource\Pages;
 use App\Filament\Resources\GameResource\RelationManagers\PlayersRelationManager;
 use App\Filament\Resources\GameResource\RelationManagers\SignedUpUsersRelationManager;
+use Domain\Core\Enums\GameEndTypeEnum;
+use Domain\Core\Enums\GameStateEnum;
 use Domain\Core\Models\Game;
 use Domain\Users\Builders\UserBuilder;
 use Domain\Users\Models\User;
@@ -64,6 +67,12 @@ class GameResource extends Resource
                 Forms\Components\TextInput::make('phase')
                     ->label(__('core/game.attributes.phase'))
                     ->default(config('ludomaniac.default_year')),
+                Forms\Components\Select::make('game_end_type')
+                    ->label(__('core/game.attributes.game_end_type'))
+                    ->options(GameEndTypeEnumHelper::formatForFilamentSelect(GameEndTypeEnum::cases()))
+                    ->disabled()
+                    ->dehydrated()
+                    ->visible(fn(Game $record) => $record->currentState() === GameStateEnum::FINISHED),
                 Forms\Components\MarkdownEditor::make('description')
                     ->label(__('core/game.attributes.description'))
                     ->disableToolbarButtons([

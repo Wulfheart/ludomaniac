@@ -58,14 +58,15 @@ class Game extends Model
      */
     public function getPossibleGameEndTypes(): array
     {
+        // TODO: Make this more typesafe
         $playersWithMaxScCount = $this->players()
             ->selectRaw('sc_count, count(*) as num_of_players')
             ->groupBy('sc_count')
             ->orderByDesc('sc_count')
-            ->first('num_of_players')
-            ->toArray();
+            ->first()
+            ->toArray()['num_of_players'];
 
-        if ($playersWithMaxScCount !== 1) {
+        if ($playersWithMaxScCount === 1) {
             return GameEndTypeEnum::cases();
         }
 
