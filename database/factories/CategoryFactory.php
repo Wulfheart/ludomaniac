@@ -2,13 +2,16 @@
 
 namespace Database\Factories;
 
+use Domain\Forum\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Category>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<Category>
  */
 class CategoryFactory extends Factory
 {
+    protected $model = Category::class;
+
     /**
      * Define the model's default state.
      *
@@ -17,7 +20,7 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->unique()->word,
         ];
     }
 }

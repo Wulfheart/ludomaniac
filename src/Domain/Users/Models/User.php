@@ -5,6 +5,7 @@ namespace Domain\Users\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Domain\Core\Models\GameSignedUpUsers;
 use Domain\Core\Models\Player;
+use Domain\Forum\Events\ForumUserCreatedEvent;
 use Domain\Users\Builders\UserBuilder;
 use Domain\Users\Enums\RankEnum;
 use Filament\Models\Contracts\FilamentUser;
@@ -51,6 +52,13 @@ class User extends Authenticatable implements FilamentUser
         'email_verified_at' => 'datetime',
         'rank' => RankEnum::class,
     ];
+
+    protected static function booted()
+    {
+        static::created(function (User $user) {
+            ForumUserCreatedEvent::dispatch($user->id);
+        });
+    }
 
     public function newEloquentBuilder($query): UserBuilder
     {

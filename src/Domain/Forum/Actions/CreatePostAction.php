@@ -19,6 +19,8 @@ class CreatePostAction
             'user_id' => $user->id,
         ]);
 
-        PostCreatedEvent::dispatch($post->id, $firstPost);
+        if (! $firstPost) {
+            PostCreatedEvent::dispatch($post->id);
+        }
     }
 }

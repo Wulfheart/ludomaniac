@@ -11,6 +11,7 @@ class CreateThreadAction
 {
     public function __construct(
         protected CreatePostAction $createPostAction,
+        protected SubscribeUserToThreadAction $subscribeUserToThreadAction,
     ) {
     }
 
@@ -22,6 +23,8 @@ class CreateThreadAction
         ]);
 
         $this->createPostAction->execute($thread, $user, $firstText);
+
+        $this->subscribeUserToThreadAction->execute($user, $thread);
 
         ThreadCreatedEvent::dispatch($thread->id);
     }
