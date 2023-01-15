@@ -5,6 +5,7 @@ namespace Domain\Forum\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Category extends Model
@@ -23,5 +24,10 @@ class Category extends Model
     public function subscriptions(): MorphMany
     {
         return $this->morphMany(Subscription::class, 'subscribable');
+    }
+
+    public function latestPost(): HasOne
+    {
+        return $this->hasOne(Post::class)->latest();
     }
 }

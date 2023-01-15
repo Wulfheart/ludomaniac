@@ -9,6 +9,7 @@ use Domain\Forum\Events\ForumUserCreatedEvent;
 use Domain\Users\Builders\UserBuilder;
 use Domain\Users\Enums\RankEnum;
 use Filament\Models\Contracts\FilamentUser;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -78,5 +79,11 @@ class User extends Authenticatable implements FilamentUser
     public function signedUpGames(): HasMany
     {
         return $this->hasMany(GameSignedUpUsers::class);
+    }
+
+    // This could also be done via policy
+    public function displayName(): Attribute
+    {
+        return new Attribute(get: fn () => auth()->user() ? $this->full_name ?? $this->name : $this->name);
     }
 }
