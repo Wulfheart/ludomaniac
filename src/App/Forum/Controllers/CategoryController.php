@@ -11,9 +11,13 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::query()->orderBy('position')->get()->map(fn (Category $category) => CategoryStruct::fromCategory($category));
+        $categories = Category::query()->orderBy('position')->get()->map(fn (
+            Category $category) => CategoryStruct::fromCategory($category)
+        );
 
-        return view('forum.category.index', new ShowAllCategoriesViewModel($categories->toArray()));
+        return view('forum.category.index', [
+            'model' => new ShowAllCategoriesViewModel($categories->toArray()),
+        ]);
     }
 
     public function show(Category $category)
