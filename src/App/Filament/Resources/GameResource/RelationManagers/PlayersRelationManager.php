@@ -16,6 +16,7 @@ use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\TextInputColumn;
 use Illuminate\Database\Eloquent\Model;
 
 class PlayersRelationManager extends RelationManager
@@ -34,6 +35,11 @@ class PlayersRelationManager extends RelationManager
         return __('core/player.name_singular');
     }
 
+    protected $listeners = [
+        'filament.ludomaniac.game.finish' => '$refresh',
+    ];
+
+
     public static function form(Form $form): Form
     {
         return $form
@@ -44,12 +50,36 @@ class PlayersRelationManager extends RelationManager
 
     public static function table(Table $table): Table
     {
+        $gameFinishedCallback = function (self $livewire) {
+            /** @var Game $game */
+            $game = $livewire->getOwnerRecord();
+            return $game->currentState() === GameStateEnum::FINISHED;
+        };
+
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('power.name')->label(__('core/player.attributes.power')),
-                Tables\Columns\TextColumn::make('user.name')->label(__('users/user.name_singular'))->default('Kein Nutzer zugewiesen'),
-                Tables\Columns\TextColumn::make('nmr_count')->label(__('core/player.attributes.nmr_count'))->color(fn (Model $record) => $record->nmr_count > 2 ? 'danger' : ''),
+                Tables\Columns\TextColumn::make('rank')
+                    ->label(__('core/player.attributes.rank'))
+                    ->sortable()
+                    ->visible($gameFinishedCallback),
+                Tables\Columns\TextColumn::make('power.name')
+                    ->label(__('core/player.attributes.power')),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label(__('users/user.name_singular'))->default('Kein Nutzer zugewiesen'),
+                Tables\Columns\TextColumn::make('nmr_count')
+                    ->label(__('core/player.attributes.nmr_count'))
+                    ->color(fn(Model $record) => $record->nmr_count > 2 ? 'danger' : ''),
+                TextInputColumn::make('sc_count')
+                    ->label(__('core/player.attributes.sc_count'))
+                    ->type('number')
+                    ->rules(['integer', 'min:0'])
+                    ->hidden($gameFinishedCallback),
+                Tables\Columns\TextColumn::make('sc_count_alternative')
+                    ->label(__('core/player.attributes.sc_count'))
+                    ->visible($gameFinishedCallback)
+                    ->getStateUsing(fn(Player $record) => $record->sc_count),
             ])
+            ->defaultSort('rank')
             ->filters([
 
             ])
@@ -63,6 +93,7 @@ class PlayersRelationManager extends RelationManager
                     ->visible(function (Model $record) {
                         return $record->game->currentState() === GameStateEnum::STARTED && $record->user_id !== null;
                     })
+                    ->hidden($gameFinishedCallback)
                     ->icon('heroicon-o-plus')
                     ->requiresConfirmation(),
                 Tables\Actions\Action::make('ban')
@@ -74,6 +105,7 @@ class PlayersRelationManager extends RelationManager
                         $action = app(BanUserFromGameAction::class);
                         $action->execute($player);
                     })
+                    ->hidden($gameFinishedCallback)
                     ->visible(fn(Model $record) => $record->canBeBanned())
                     ->icon('heroicon-s-ban')
                     ->color('danger')
@@ -81,6 +113,7 @@ class PlayersRelationManager extends RelationManager
                 Tables\Actions\Action::make('Assign user')
                     ->label(__('core/player.actions.assign'))
                     ->modalHeading(__('core/player.assign_users.title'))
+                    ->hidden($gameFinishedCallback)
                     ->form(function (RelationManager $livewire) {
                         /** @var Game $game */
                         $game = $livewire->getOwnerRecord();

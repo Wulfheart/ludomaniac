@@ -17,6 +17,10 @@ class SignedUpUsersRelationManager extends RelationManager
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    protected $listeners = [
+        'filament.ludomaniac.game.finish' =>  '$refresh',
+    ];
+
     public static function getModelLabel(): string
     {
         return __('core/game_signed_up_user.name_singular');

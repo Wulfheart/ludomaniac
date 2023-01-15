@@ -6,6 +6,8 @@ return [
     'attributes' => [
         'power' => "Land",
         'nmr_count' => "NMRs",
+        'sc_count' => "VZs",
+        'rank' => "Platz",
     ],
     'actions' => [
         'ban' => "Rausschmeißen",
