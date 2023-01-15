@@ -8,6 +8,6 @@ class SubscribeUsersForNewPostAction
 {
     public function execute(Post $post): void
     {
-
+        //$post->thread->category
     }
 }
