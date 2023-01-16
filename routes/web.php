@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 include __DIR__ . '/forum.php';
+include __DIR__ . '/auth.php';
