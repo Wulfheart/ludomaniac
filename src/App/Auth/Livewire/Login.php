@@ -20,6 +20,7 @@ class Login extends Component implements HasForms
     {
         return [
             TextInput::make('username')->required(),
+            TextInput::make('password')->required()->password(),
         ];
     }
 
