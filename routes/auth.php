@@ -1,8 +1,13 @@
 <?php
 
-use App\Forum\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
-Route::prefix('auth')->name('auth.')->group(function(){
-    Route::get('/login', \App\Auth\Livewire\Login::class)->name('login');
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('keycloak')->redirect();
+});
+
+Route::get('/auth/callback', function () {
+    $user = Socialite::driver('keycloak')->user();
+    dd($user);
 });

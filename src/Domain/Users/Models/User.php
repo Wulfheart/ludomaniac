@@ -54,13 +54,6 @@ class User extends Authenticatable implements FilamentUser
         'rank' => RankEnum::class,
     ];
 
-    protected static function booted()
-    {
-        static::created(function (User $user) {
-            ForumUserCreatedEvent::dispatch($user->id);
-        });
-    }
-
     public function newEloquentBuilder($query): UserBuilder
     {
         return new UserBuilder($query);

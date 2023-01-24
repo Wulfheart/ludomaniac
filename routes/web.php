@@ -17,5 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-include __DIR__ . '/forum.php';
 include __DIR__ . '/auth.php';
