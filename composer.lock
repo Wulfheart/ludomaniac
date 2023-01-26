@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c3145070524f768d7b376bcf4af486c",
+    "content-hash": "571d57f164f5f7fd5f531e15abed710e",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -4045,17 +4045,17 @@
             "time": "2022-09-02T11:04:28+00:00"
         },
         {
-            "name": "socialiteproviders/keycloak",
-            "version": "5.2.0",
+            "name": "socialiteproviders/laravelpassport",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SocialiteProviders/Keycloak.git",
-                "reference": "8d24d621419b446c3613f38ca1437043c557cd43"
+                "url": "https://github.com/SocialiteProviders/Laravel-Passport.git",
+                "reference": "5ee785624a0fc5ee4b18922e1295a63729074285"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Keycloak/zipball/8d24d621419b446c3613f38ca1437043c557cd43",
-                "reference": "8d24d621419b446c3613f38ca1437043c557cd43",
+                "url": "https://api.github.com/repos/SocialiteProviders/Laravel-Passport/zipball/5ee785624a0fc5ee4b18922e1295a63729074285",
+                "reference": "5ee785624a0fc5ee4b18922e1295a63729074285",
                 "shasum": ""
             },
             "require": {
@@ -4066,7 +4066,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "SocialiteProviders\\Keycloak\\": ""
+                    "SocialiteProviders\\LaravelPassport\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -4075,24 +4075,24 @@
             ],
             "authors": [
                 {
-                    "name": "Oleg Kuchumov",
-                    "email": "voenniy@gmail.com"
+                    "name": "recca0120",
+                    "email": "recca0120@name.com"
                 }
             ],
-            "description": "Keycloak OAuth2 Provider for Laravel Socialite",
+            "description": "LaravelPassport OAuth2 Provider for Laravel Socialite",
             "keywords": [
-                "keycloak",
                 "laravel",
                 "oauth",
+                "passport",
                 "provider",
                 "socialite"
             ],
             "support": {
-                "docs": "https://socialiteproviders.com/keycloak",
+                "docs": "https://socialiteproviders.com/laravelpassport",
                 "issues": "https://github.com/socialiteproviders/providers/issues",
                 "source": "https://github.com/socialiteproviders/providers"
             },
-            "time": "2022-07-18T08:33:47+00:00"
+            "time": "2022-08-10T23:31:11+00:00"
         },
         {
             "name": "socialiteproviders/manager",
