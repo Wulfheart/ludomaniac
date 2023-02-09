@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Actions;
+namespace App\Actions;
 
 use app\Models\BanLog;
 use app\Models\Player;

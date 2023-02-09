@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Models;
+namespace App\Models;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\GameTestCase;

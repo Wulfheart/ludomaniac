@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Policies;
+namespace App\Policies;
 
 use app\Models\User;
 use app\Models\Variant;

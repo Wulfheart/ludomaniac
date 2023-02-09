@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Filament\Resources\GameResource\Pages;
+namespace App\Filament\Resources\GameResource\Pages;
 
 use app\Actions\FinishGameAction;
 use app\Enums\GameEndTypeEnum;

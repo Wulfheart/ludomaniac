@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Actions;
+namespace App\Actions;
 
 use app\Models\Game;
 use app\Models\Player;

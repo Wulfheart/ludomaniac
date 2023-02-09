@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Filament\Resources;
+namespace App\Filament\Resources;
 
 use App\Filament\Resources\VariantResource\Pages;
 use app\Filament\Resources\VariantResource\RelationManagers\PowersRelationManager;

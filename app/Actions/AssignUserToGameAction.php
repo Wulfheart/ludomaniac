@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Actions;
+namespace App\Actions;
 
 use app\Events\UserAssignedToGameEvent;
 use app\Models\Player;

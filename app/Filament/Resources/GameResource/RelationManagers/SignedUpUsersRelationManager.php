@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Filament\Resources\GameResource\RelationManagers;
+namespace App\Filament\Resources\GameResource\RelationManagers;
 
 use app\Models\Game;
 use app\Models\User;

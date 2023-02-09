@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Filament\Resources\VariantResource\Pages;
+namespace App\Filament\Resources\VariantResource\Pages;
 
 use app\Filament\Resources\VariantResource;
 use Filament\Resources\Pages\CreateRecord;

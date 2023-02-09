@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Filament\Resources\GameResource\RelationManagers;
+namespace App\Filament\Resources\GameResource\RelationManagers;
 
 use app\Actions\AddNMRForPlayerAction;
 use app\Actions\AssignUserToGameAction;

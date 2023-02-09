@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Filament\Helpers;
+namespace App\Filament\Helpers;
 
 use app\Enums\GameEndTypeEnum;
 

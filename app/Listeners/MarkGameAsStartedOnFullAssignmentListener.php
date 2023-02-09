@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Listeners;
+namespace App\Listeners;
 
 use app\Enums\GameStateEnum;
 use app\Events\GameStartedEvent;

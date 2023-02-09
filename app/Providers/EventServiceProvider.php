@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Providers;
+
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Symfony\Component\Finder\Finder;
@@ -16,7 +18,7 @@ class EventServiceProvider extends ServiceProvider
         //    SendEmailVerificationNotification::class,
         //],
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
-            \SocialiteProviders\LaravelPassport\LaravelPassportExtendSocialite::class.'@handle',        ],
+            \SocialiteProviders\LaravelPassport\LaravelPassportExtendSocialite::class . '@handle',],
     ];
 
     /**
@@ -38,17 +40,17 @@ class EventServiceProvider extends ServiceProvider
         return true;
     }
 
-    public function discoverEventsWithin(): array
-    {
-        return collect(
-            Finder::create()
-                ->in($this->app->basePath('src/Domain'))
-                ->directories()
-                ->getIterator()
-        )
-            ->keys()
-            ->toArray();
-    }
+    //public function discoverEventsWithin(): array
+    //{
+    //    return collect(
+    //        Finder::create()
+    //            ->in($this->app->basePath('src/Domain'))
+    //            ->directories()
+    //            ->getIterator()
+    //    )
+    //        ->keys()
+    //        ->toArray();
+    //}
 
     public function eventDiscoveryBasePath()
     {
