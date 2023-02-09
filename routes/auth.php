@@ -7,8 +7,7 @@ Route::get('/auth/redirect', function () {
     return Socialite::driver('laravelpassport')->redirect();
 });
 
-Route::get('/auth/callback', function (\Illuminate\Http\Request $request)
-{
+Route::get('/auth/callback', function (Illuminate\Http\Request $request) {
     $user = Socialite::driver('laravelpassport')->user();
     dd($request, $user);
 });
