@@ -2,8 +2,8 @@
 
 namespace App\Actions;
 
-use app\Models\BanLog;
-use app\Models\Player;
+use App\Models\BanLog;
+use App\Models\Player;
 
 class BanUserFromGameAction
 {

@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use app\Models\User;
-use app\Models\Variant;
+use App\Models\User;
+use App\Models\Variant;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class VariantPolicy

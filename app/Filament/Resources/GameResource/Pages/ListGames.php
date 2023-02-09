@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\GameResource\Pages;
 
-use app\Filament\Resources\GameResource;
+use App\Filament\Resources\GameResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 

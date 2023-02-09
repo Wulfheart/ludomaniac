@@ -2,10 +2,10 @@
 
 namespace App\Listeners;
 
-use app\Enums\GameStateEnum;
-use app\Events\GameStartedEvent;
-use app\Events\UserAssignedToGameEvent;
-use app\Models\Game;
+use App\Enums\GameStateEnum;
+use App\Events\GameStartedEvent;
+use App\Events\UserAssignedToGameEvent;
+use App\Models\Game;
 
 class MarkGameAsStartedOnFullAssignmentListener
 {

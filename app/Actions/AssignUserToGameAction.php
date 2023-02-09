@@ -2,9 +2,9 @@
 
 namespace App\Actions;
 
-use app\Events\UserAssignedToGameEvent;
-use app\Models\Player;
-use app\Models\User;
+use App\Events\UserAssignedToGameEvent;
+use App\Models\Player;
+use App\Models\User;
 
 class AssignUserToGameAction
 {

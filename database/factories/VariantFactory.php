@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use app\Models\Variant;
+use App\Models\Variant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

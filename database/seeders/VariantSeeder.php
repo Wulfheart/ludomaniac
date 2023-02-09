@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use app\Models\Variant;
+use App\Models\Variant;
 use Illuminate\Database\Seeder;
 
 class VariantSeeder extends Seeder

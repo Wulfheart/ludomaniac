@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\VariantResource\Pages;
 
-use app\Filament\Resources\VariantResource;
+use App\Filament\Resources\VariantResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateVariant extends CreateRecord

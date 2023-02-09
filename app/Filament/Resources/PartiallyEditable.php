@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources;
 
-use app\Models\User;
+use App\Models\User;
 use Filament\Pages\Page;
 use Filament\Resources\Pages\CreateRecord;
 use Filament\Resources\Pages\EditRecord;

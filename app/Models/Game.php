@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use app\Enums\GameEndTypeEnum;
-use app\Enums\GameStateEnum;
+use App\Enums\GameEndTypeEnum;
+use App\Enums\GameStateEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

@@ -2,15 +2,15 @@
 
 namespace App\Filament\Resources;
 
-use app\Builders\UserBuilder;
-use app\Enums\GameEndTypeEnum;
-use app\Enums\GameStateEnum;
-use app\Filament\Helpers\GameEndTypeEnumHelper;
+use App\Builders\UserBuilder;
+use App\Enums\GameEndTypeEnum;
+use App\Enums\GameStateEnum;
+use App\Filament\Helpers\GameEndTypeEnumHelper;
 use App\Filament\Resources\GameResource\Pages;
-use app\Filament\Resources\GameResource\RelationManagers\PlayersRelationManager;
-use app\Filament\Resources\GameResource\RelationManagers\SignedUpUsersRelationManager;
-use app\Models\Game;
-use app\Models\User;
+use App\Filament\Resources\GameResource\RelationManagers\PlayersRelationManager;
+use App\Filament\Resources\GameResource\RelationManagers\SignedUpUsersRelationManager;
+use App\Models\Game;
+use App\Models\User;
 use Filament\Forms;
 use Filament\Pages\Page;
 use Filament\Resources\Form;

@@ -2,7 +2,7 @@
 
 namespace App\Filament\Helpers;
 
-use app\Enums\GameEndTypeEnum;
+use App\Enums\GameEndTypeEnum;
 
 class GameEndTypeEnumHelper
 {

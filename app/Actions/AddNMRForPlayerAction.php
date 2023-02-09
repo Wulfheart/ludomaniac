@@ -2,8 +2,8 @@
 
 namespace App\Actions;
 
-use app\Models\NMR;
-use app\Models\Player;
+use App\Models\NMR;
+use App\Models\Player;
 
 class AddNMRForPlayerAction
 {

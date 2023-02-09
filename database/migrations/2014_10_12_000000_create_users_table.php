@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('rank')->default(\app\Enums\RankEnum::C->value);
+            $table->string('rank')->default(\App\Enums\RankEnum::C->value);
             $table->boolean('is_admin')->default(false);
             $table->boolean('is_game_master')->default(false);
             $table->rememberToken();

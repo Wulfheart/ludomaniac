@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources\GameResource\Pages;
 
-use app\Actions\FinishGameAction;
-use app\Enums\GameEndTypeEnum;
-use app\Filament\Resources\GameResource;
-use app\Models\Game;
+use App\Actions\FinishGameAction;
+use App\Enums\GameEndTypeEnum;
+use App\Filament\Resources\GameResource;
+use App\Models\Game;
 use Filament\Forms\Components\Select;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;

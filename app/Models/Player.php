@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use app\Builders\PlayerBuilder;
+use App\Builders\PlayerBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

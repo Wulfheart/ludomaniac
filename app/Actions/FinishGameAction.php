@@ -2,10 +2,10 @@
 
 namespace App\Actions;
 
-use app\Enums\GameEndTypeEnum;
-use app\Events\GameFinishedEvent;
-use app\Models\Game;
-use app\Models\Player;
+use App\Enums\GameEndTypeEnum;
+use App\Events\GameFinishedEvent;
+use App\Models\Game;
+use App\Models\Player;
 
 class FinishGameAction
 {

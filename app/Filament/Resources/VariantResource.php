@@ -3,8 +3,8 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\VariantResource\Pages;
-use app\Filament\Resources\VariantResource\RelationManagers\PowersRelationManager;
-use app\Models\Variant;
+use App\Filament\Resources\VariantResource\RelationManagers\PowersRelationManager;
+use App\Models\Variant;
 use Filament\Forms;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Resources\Form;

@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\GameResource\Pages;
 
-use app\Actions\InitializeGameAction;
-use app\Filament\Resources\GameResource;
-use app\Models\Game;
+use App\Actions\InitializeGameAction;
+use App\Filament\Resources\GameResource;
+use App\Models\Game;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
 

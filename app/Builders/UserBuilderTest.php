@@ -2,10 +2,10 @@
 
 namespace App\Builders;
 
-use app\Actions\InitializeGameAction;
-use app\Models\Game;
-use app\Models\User;
-use app\Models\Variant;
+use App\Actions\InitializeGameAction;
+use App\Models\Game;
+use App\Models\User;
+use App\Models\Variant;
 use Database\Seeders\VariantSeeder;
 use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
 use Tests\TestCase;

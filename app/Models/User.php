@@ -3,8 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use app\Builders\UserBuilder;
-use app\Enums\RankEnum;
+use App\Builders\UserBuilder;
+use App\Enums\RankEnum;
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use app\Models\Game;
-use app\Models\User;
+use App\Models\Game;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class GamePolicy

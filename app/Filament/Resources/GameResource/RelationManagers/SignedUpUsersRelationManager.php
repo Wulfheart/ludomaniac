@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\GameResource\RelationManagers;
 
-use app\Models\Game;
-use app\Models\User;
+use App\Models\Game;
+use App\Models\User;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
