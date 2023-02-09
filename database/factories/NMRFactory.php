@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use Domain\Core\Models\NMR;
+use app\Models\NMR;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

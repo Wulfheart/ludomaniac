@@ -2,11 +2,11 @@
 
 namespace Tests;
 
+use app\Actions\InitializeGameAction;
+use app\Models\Game;
+use app\Models\User;
+use app\Models\Variant;
 use Database\Seeders\VariantSeeder;
-use Domain\Core\Actions\InitializeGameAction;
-use Domain\Core\Models\Game;
-use Domain\Core\Models\Variant;
-use Domain\Users\Models\User;
 
 class GameTestCase extends TestCase
 {

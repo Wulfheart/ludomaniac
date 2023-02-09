@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Domain\Core\Models\Variant;
+use app\Models\Variant;
 use Illuminate\Database\Seeder;
 
 class VariantSeeder extends Seeder

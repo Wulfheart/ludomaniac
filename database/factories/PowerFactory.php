@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use Domain\Core\Models\Power;
+use app\Models\Power;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

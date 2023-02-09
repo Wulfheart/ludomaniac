@@ -1,6 +1,6 @@
 <?php
 
-use Domain\Core\Enums\GameEndTypeEnum;
+use app\Enums\GameEndTypeEnum;
 
 return [
     'name_singular' => 'Spiel',

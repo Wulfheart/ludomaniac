@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use Domain\Core\Models\GameSignedUpUsers;
+use app\Models\GameSignedUpUsers;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
