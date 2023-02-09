@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\VariantResource\Pages;
+use App\Filament\Resources\VariantResource\RelationManagers\PowersRelationManager;
 use Domain\Core\Models\Variant;
 use Filament\Forms;
 use Filament\Forms\Components\MarkdownEditor;
@@ -70,7 +71,7 @@ class VariantResource extends Resource
     public static function getRelations(): array
     {
         return [
-
+            PowersRelationManager::class,
         ];
     }
 
