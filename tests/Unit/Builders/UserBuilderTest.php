@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Builders;
+namespace Tests\Unit\Builders;
 
 use App\Actions\InitializeGameAction;
 use App\Models\Game;
@@ -14,9 +14,8 @@ class UserBuilderTest extends TestCase
 {
     use LazilyRefreshDatabase;
 
-    public function testWhereNotPlayinInGame(): void
+    public function testWhereNotPlayingInGame(): void
     {
-        // Setup
         $this->seed(VariantSeeder::class);
         User::factory(10)->create();
 
@@ -26,7 +25,6 @@ class UserBuilderTest extends TestCase
         $action->execute($game);
         $this->assertDatabaseCount('players', 7);
 
-        // Test
         $users = User::query()->whereNotPlayingInGame($game->id)->get();
         $this->assertCount(10, $users);
 
