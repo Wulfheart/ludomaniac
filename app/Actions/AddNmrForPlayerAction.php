@@ -5,7 +5,7 @@ namespace App\Actions;
 use App\Models\NMR;
 use App\Models\Player;
 
-class AddNMRForPlayerAction
+class AddNmrForPlayerAction
 {
     public function execute(Player $player)
     {

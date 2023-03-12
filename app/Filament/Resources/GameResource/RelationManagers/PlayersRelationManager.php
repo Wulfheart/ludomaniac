@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\GameResource\RelationManagers;
 
-use App\Actions\AddNMRForPlayerAction;
+use App\Actions\AddNmrForPlayerAction;
 use App\Actions\AssignUserToGameAction;
 use App\Actions\BanUserFromGameAction;
 use App\Builders\UserBuilder;
@@ -87,7 +87,7 @@ class PlayersRelationManager extends RelationManager
             ])
             ->actions([
                 Tables\Actions\Action::make('nmr')
-                    ->action(fn (Model $record, AddNMRForPlayerAction $actor) => $actor->execute($record))
+                    ->action(fn (Model $record, AddNmrForPlayerAction $actor) => $actor->execute($record))
                     ->label(__('core/player.actions.nmr'))
                     ->visible(function (Model $record) {
                         return $record->game->currentState() === GameStateEnum::STARTED && $record->user_id !== null;
