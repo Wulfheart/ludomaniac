@@ -7,7 +7,7 @@ use App\Models\Player;
 
 class AddNmrForPlayerAction
 {
-    public function execute(Player $player)
+    public function execute(Player $player): void
     {
         $player->nmr_count++;
         $player->save();

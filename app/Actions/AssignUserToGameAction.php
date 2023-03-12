@@ -8,7 +8,7 @@ use App\Models\User;
 
 class AssignUserToGameAction
 {
-    public function execute(Player $player, User $user)
+    public function execute(Player $player, User $user): void
     {
         $player->user_id = $user->id;
         $player->save();
