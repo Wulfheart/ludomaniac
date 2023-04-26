@@ -1,0 +1,1484 @@
+*, ::before, ::after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  
+}
+
+.container {
+  width: 100%
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px
+  }
+}
+
+.filament-forms-simple-repeater-component .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0
+}
+
+.filament-forms-simple-repeater-component .absolute {
+  position: absolute
+}
+
+.filament-forms-simple-repeater-component .relative {
+  position: relative
+}
+
+.filament-forms-simple-repeater-component .top-0 {
+  top: 0px
+}
+
+.filament-forms-simple-repeater-component .right-0 {
+  right: 0px
+}
+
+.filament-forms-simple-repeater-component .-mt-\[0\.6875rem\] {
+  margin-top: -0.6875rem
+}
+
+.filament-forms-simple-repeater-component .mr-4 {
+  margin-right: 1rem
+}
+
+.filament-forms-simple-repeater-component .-mt-\[0\.6875rem\] {
+  margin-top: -0.6875rem
+}
+
+.filament-forms-simple-repeater-component .flex {
+  display: flex
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .h-6 {
+  height: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .h-4 {
+  height: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content
+}
+
+.filament-forms-simple-repeater-component .w-6 {
+  width: 1.5rem
+}
+
+.filament-forms-simple-repeater-component .w-4 {
+  width: 1rem
+}
+
+.filament-forms-simple-repeater-component .cursor-grab {
+  cursor: -webkit-grab;
+  cursor: grab
+}
+
+.filament-forms-simple-repeater-component .flex-col {
+  flex-direction: column
+}
+
+.filament-forms-simple-repeater-component .items-end {
+  align-items: flex-end
+}
+
+.filament-forms-simple-repeater-component .items-center {
+  align-items: center
+}
+
+.filament-forms-simple-repeater-component .justify-end {
+  justify-content: flex-end
+}
+
+.filament-forms-simple-repeater-component .justify-center {
+  justify-content: center
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+}
+
+.filament-forms-simple-repeater-component .divide-x > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(1px * var(--tw-divide-x-reverse));
+  border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)))
+}
+
+.filament-forms-simple-repeater-component .overflow-hidden {
+  overflow: hidden
+}
+
+.filament-forms-simple-repeater-component .rounded-t-lg {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component .rounded-bl-lg {
+  border-bottom-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component .rounded-tr-lg {
+  border-top-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component .rounded-bl-lg {
+  border-bottom-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component .rounded-tr-lg {
+  border-top-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component .rounded-bl-lg {
+  border-bottom-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component .rounded-tr-lg {
+  border-top-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component .rounded-bl-lg {
+  border-bottom-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component .rounded-tr-lg {
+  border-top-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component .border-x {
+  border-left-width: 1px;
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-b {
+  border-bottom-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-b {
+  border-bottom-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-b {
+  border-bottom-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-b {
+  border-bottom-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-b {
+  border-bottom-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-t {
+  border-top-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-t {
+  border-top-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-t {
+  border-top-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-t {
+  border-top-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-t {
+  border-top-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-t {
+  border-top-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-t {
+  border-top-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-t {
+  border-top-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-t {
+  border-top-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-l {
+  border-left-width: 1px
+}
+
+.filament-forms-simple-repeater-component .border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity))
+}
+
+.filament-forms-simple-repeater-component .bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+}
+
+.filament-forms-simple-repeater-component .bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.filament-forms-simple-repeater-component .bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity))
+}
+
+.filament-forms-simple-repeater-component .pr-4 {
+  padding-right: 1rem
+}
+
+.filament-forms-simple-repeater-component .pr-2 {
+  padding-right: 0.5rem
+}
+
+.filament-forms-simple-repeater-component .pr-1 {
+  padding-right: 0.25rem
+}
+
+.filament-forms-simple-repeater-component .text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity))
+}
+
+.filament-forms-simple-repeater-component .hover\:bg-gray-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity))
+}
+
+.filament-forms-simple-repeater-component .focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px
+}
+
+.filament-forms-simple-repeater-component .focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+}
+
+.filament-forms-simple-repeater-component .focus\:ring-inset:focus {
+  --tw-ring-inset: inset
+}
+
+.filament-forms-simple-repeater-component .focus\:ring-white:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity))
+}
+
+.filament-forms-simple-repeater-component .focus\:ring-offset-2:focus {
+  --tw-ring-offset-width: 2px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:right-auto {
+  right: auto
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:left-0 {
+  left: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-bl-none {
+  border-bottom-left-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-br-lg {
+  border-bottom-right-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tr-none {
+  border-top-right-radius: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:rounded-tl-lg {
+  border-top-left-radius: 0.5rem
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-l-0 {
+  border-left-width: 0px
+}
+
+.filament-forms-simple-repeater-component [dir="rtl"] .rtl\:border-r {
+  border-right-width: 1px
+}
+
+.filament-forms-simple-repeater-component .dark .dark\:divide-gray-600 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-divide-opacity))
+}
+
+.filament-forms-simple-repeater-component .dark .dark\:border-gray-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-border-opacity))
+}
+
+.filament-forms-simple-repeater-component .dark .dark\:text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity))
+}
+
+.filament-forms-simple-repeater-component .dark .dark\:hover\:bg-gray-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity))
+}

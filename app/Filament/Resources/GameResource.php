@@ -12,12 +12,14 @@ use App\Filament\Resources\GameResource\RelationManagers\SignedUpUsersRelationMa
 use App\Models\Game;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Pages\Page;
 use Filament\Resources\Form;
 use Filament\Resources\Pages\CreateRecord;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use RyanChandler\FilamentSimpleRepeater\SimpleRepeater;
 
 class GameResource extends Resource
 {
@@ -50,7 +52,7 @@ class GameResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->label(__('core/game.attributes.name'))
                     ->required()
-                    ->disabled(! static::allowedToModify($canUpdateNameAndGameMasterCallback))
+                    ->disabled(!static::allowedToModify($canUpdateNameAndGameMasterCallback))
                     ->dehydrated(static::allowedToModify($canUpdateNameAndGameMasterCallback))
                     ->unique(ignoreRecord: true),
                 Forms\Components\Select::make('variant_id')
@@ -58,12 +60,12 @@ class GameResource extends Resource
                     ->relationship('variant', 'name')
                     ->required()
                     ->disabledOn('edit')
-                    ->dehydrated(fn (Page $livewire) => $livewire instanceof CreateRecord),
+                    ->dehydrated(fn(Page $livewire) => $livewire instanceof CreateRecord),
                 Forms\Components\Select::make('game_master_id')
                     ->label(__('core/game.attributes.game_master'))
-                    ->disabled(! static::allowedToModify($canUpdateNameAndGameMasterCallback))
+                    ->disabled(!static::allowedToModify($canUpdateNameAndGameMasterCallback))
                     ->dehydrated(static::allowedToModify($canUpdateNameAndGameMasterCallback))
-                    ->relationship('gameMaster', 'name', fn (UserBuilder $query) => $query->whereIsGameMaster()),
+                    ->relationship('gameMaster', 'name', fn(UserBuilder $query) => $query->whereIsGameMaster()),
                 Forms\Components\TextInput::make('phase')
                     ->label(__('core/game.attributes.phase'))
                     ->default(config('ludomaniac.default_year')),
@@ -72,11 +74,18 @@ class GameResource extends Resource
                     ->options(GameEndTypeEnumHelper::formatForFilamentSelect(GameEndTypeEnum::cases()))
                     ->disabled()
                     ->dehydrated()
-                    ->visible(fn (?Game $record) => $record?->currentState() === GameStateEnum::FINISHED),
+                    ->visible(fn(?Game $record) => $record?->currentState() === GameStateEnum::FINISHED),
+                Forms\Components\RichEditor::make('description')
+                    ->label(__('core/game.attributes.description'))
+                    ->disableToolbarButtons([
+                        //'attachFiles',
+                        'codeBlock',
+                    ])
+                    ->columnSpanFull(),
                 Forms\Components\MarkdownEditor::make('description')
                     ->label(__('core/game.attributes.description'))
                     ->disableToolbarButtons([
-                        'attachFiles',
+                        //'attachFiles',
                         'codeBlock',
                     ])
                     ->columnSpanFull(),

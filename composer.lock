@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3188a4282f0902386b20ff234b3d767",
+    "content-hash": "bbd734d6c13034c1789182d0695929d3",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -4097,6 +4097,86 @@
                 }
             ],
             "time": "2023-02-14T16:54:54+00:00"
+        },
+        {
+            "name": "ryangjchandler/filament-simple-repeater",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/filament-simple-repeater",
+                "reference": "f3178941e5e347d1c67343dd2e50496de6b7db78"
+            },
+            "require": {
+                "filament/filament": "^2.0",
+                "illuminate/contracts": "^9.0 | ^10.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "nunomaduro/collision": "^6.0 | ^7.0",
+                "nunomaduro/larastan": "^2.0",
+                "orchestra/testbench": "^7.0 | ^8.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-ray": "^1.29"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "RyanChandler\\FilamentSimpleRepeater\\FilamentSimpleRepeaterServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentSimpleRepeater": "RyanChandler\\FilamentSimpleRepeater\\Facades\\FilamentSimpleRepeater"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RyanChandler\\FilamentSimpleRepeater\\": "src",
+                    "RyanChandler\\FilamentSimpleRepeater\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "RyanChandler\\FilamentSimpleRepeater\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "test": [
+                    "vendor/bin/pest"
+                ],
+                "test-coverage": [
+                    "vendor/bin/pest coverage"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan Chandler",
+                    "email": "support@ryangjchandler.co.uk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A single-field repeater for Filament.",
+            "homepage": "https://github.com/ryangjchandler/filament-simple-repeater",
+            "keywords": [
+                "filament-simple-repeater",
+                "laravel",
+                "ryangjchandler"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "socialiteproviders/laravelpassport",
@@ -11131,7 +11211,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "ryangjchandler/filament-simple-repeater": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

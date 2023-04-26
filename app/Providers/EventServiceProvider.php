@@ -38,20 +38,4 @@ class EventServiceProvider extends ServiceProvider
         return true;
     }
 
-    //public function discoverEventsWithin(): array
-    //{
-    //    return collect(
-    //        Finder::create()
-    //            ->in($this->app->basePath('src/Domain'))
-    //            ->directories()
-    //            ->getIterator()
-    //    )
-    //        ->keys()
-    //        ->toArray();
-    //}
-
-    public function eventDiscoveryBasePath()
-    {
-        return $this->app->basePath('src');
-    }
 }
